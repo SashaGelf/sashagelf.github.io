@@ -1,0 +1,117 @@
+body {
+    padding: 2vh 0;
+    gap: 1vh;
+}
+header {
+    gap: 3vw;
+}
+main {
+    gap: 1vh;
+}
+
+header img, .cell, button,
+#active-tasks, #inactive-tasks {
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 5vmin;
+}
+
+.board {
+    height: calc(97vmin * 2/3);
+}
+.cell {
+    padding: 0.2cqi;
+    font-size: 2vmin;
+    
+    transform: scale(1);
+    transform-origin: center center;
+    transition: all 0.5s ease;
+}
+.cell.marked, .cell.free {
+    cursor: default;
+}
+.cell:hover {
+    z-index: 15;
+    background-color: #ff95a6;
+    transform: scale(1.5);
+    /* add shadow? */
+}
+.cell.marked:hover {
+    z-index: 10;
+    transform: scale(1.2);
+    /* add smaller shadow? */
+}
+.cell.free:hover {
+    z-index: 5;
+    transform: scale(1.05);
+    /* add teensy shadow? */
+}
+
+.scores {
+    font-size: 2.5vmin;
+}
+#square-score, #bingo-score, #board-score {
+    font-size: 200%; /* change later? */
+}
+
+.game-buttons {
+    gap: 2vw;
+}
+button {
+    padding: 0.5vmin 2.5vmin;
+    border-radius: 1.9cqh;
+    font-size: 2.5vmin;
+}
+
+#full-list {
+    width: calc((100vw)*2/3);
+}
+h2 {
+    font-size: 3.5vmin;
+}
+#active-tasks {
+    font-size: 2.6vmin;
+}
+#inactive-tasks {
+    font-size: 2.45vmin;
+}
+
+::-webkit-scrollbar {
+    width: 1.8vw;
+}
+::-webkit-scrollbar-button {
+    height: 1.8vw;
+    border-radius: 0.6cqi;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 0.6cqw;
+}
+
+#new-task {
+    width: 33.3vw;
+    border-radius: 4cqw;
+    font-size: 2cqw;
+}
+h3 {
+    font-size: 3.2cqw;
+}
+
+#score-menu {
+    height: 80vh;
+    font-size: 3vmin;
+    transform: translateY(-90vh);
+}
+#high-score, #last-score {
+    border-spacing: 2.5vw 0;
+}
+svg {
+    height: 50%;
+}
+path {
+    stroke-width: 0.75cqi;
+}
+svg text {
+    font-size: 4.5vmin;
+}

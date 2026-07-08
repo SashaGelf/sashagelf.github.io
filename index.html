@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- sorry this whole thing is so messy and full of comments -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task Bingo</title>
+
+        <!-- link to icon goes here -->
+        <link rel="stylesheet" href="style/global.css">
+        <link rel="stylesheet" href="style/desktop.css" media="screen and (min-width: 769px)">
+        <link rel="stylesheet" href="style/mobile.css" media="screen and (max-width: 768px)">
+    </head>
+    <body>
+        <header>
+
+            <button id="list-button">tasks</button><!-- this is a placeholder button, but it works -->
+            <img src="assets/scoreMenu.png" id="score-button" alt="star-shaped Score Menu button">
+            <!-- <img src="assets/settings.png" alt="gear-shaped Options button"> -->
+            <!-- the above currently has no id and does nothing -->
+            <!-- <button>?</button> -->
+            <!-- the above is a placeholder button, currently has no id and does nothing. -->
+            <!-- will be for about me and info about web app -->
+
+        </header>
+        <main>
+            <h1>Task Bingo</h1>
+
+            <section id="full-list">
+                <div class="header-div">
+                    <h2>All Tasks</h2>
+                </div>
+                <div class="scrollable">
+                    <table id="active-tasks"></table>
+                    <table id="inactive-tasks"></table>
+                </div>
+                <button id="new-task-button">New Task +</button>
+            </section>
+
+            <section id="new-task">
+                <h3>name?</h3>
+                <span>What is the name of your task?</span>
+                <input type="text" id="ntName" name="ntName" minlength="1" maxlength="50">
+                <span class="hint">Be specific, but don't make it too long, or it won't fit in the bingo board space!</span>
+                <h3>frequency?</h3>
+                <span>how often does your task need to be done?</span>
+                <div>
+                    every
+                    <input type="number" id="ntFreq" name="ntFreq" min="0" max="365">
+                    days
+                </div>
+                <span class="hint">
+                    1 = daily, 2 = every other day,
+                    <br>
+                    7 = weekly, 31 = monthly, etc.
+                </span>
+                <button id="ntConfirm">confirm!</button>
+                <button id="ntCancel">cancel</button>
+            </section>
+
+            <section id="score-menu">
+                <button id="score-close">close</button>
+                <div class="table-div">
+                    <table id="high-score">
+                        <td>High Score:</td>
+                        <td></td><td></td><td></td>
+                    </table>
+                    <div id="high-date"></div>
+                    <table id="last-score">
+                        <td>Last Score:</td>
+                        <td></td><td></td><td></td>
+                    </table>
+                    <div id="last-date"></div>
+                    <table id="today-score">
+                        <tr>
+                            <td>Today's Score:</td>
+                            <td></td><td></td><td></td>
+                        </tr>
+                        <tr id="table-label">
+                            <td><!-- empty cell --></td>
+                            <td>square</td>
+                            <td>bingo</td>
+                            <td>board</td>
+                        </tr>
+                    </table>
+                    <div id="today-date"></div>
+                </div>
+
+                <svg viewBox="0 0 900 500">
+                    <!--guidelines-->
+                    <path id="guide" d="M 50 50 L 50 450"></path>
+                    <path id="guide" d="M 250 50 L 250 450"></path>
+                    <path id="guide" d="M 450 50 L 450 450"></path>
+                    <path id="guide" d="M 650 50 L 650 450"></path>
+                    <path id="guide" d="M 850 50 L 850 450"></path>
+                    <path id="axis" d="M 50 450 L 850 450"></path>
+                    <!--score graphs-->
+                    <path id="squarePath" d=""></path>
+                    <path id="bingoPath" d=""></path>
+                    <path id="boardPath" d=""></path>
+                    <!--day labels-->
+                    <text id="day1" x="40" y="30"></text>
+                    <text id="day2" x="240" y="30"></text>
+                    <text id="day3" x="440" y="30"></text>
+                    <text id="day4" x="640" y="30"></text>
+                    <text id="day5" x="840" y="30"></text>
+                </svg>
+            </section>
+
+            <!-- options/settings menu goes here -->
+            <section id="options">
+                <!-- import/export all localStorage save data -->
+                <!-- import/export to do list specifically -->
+                <!-- change color palette -->
+                <!-- delete all localStorage data ("are you sure?" alert first) -->
+            </section>
+
+            <!-- about/info menu html goes here -->
+            <section id="about">
+                <!-- about the app, how to use, etc. -->
+                <!-- my links -->
+            </section>
+
+            <div id="bingo-board" class="board"></div>
+
+            <table class="scores">
+                <tr>
+                    <td>Score:</td>
+                    <td id="square-score"></td>
+                    <td id="bingo-score"></td>
+                    <td id="board-score"></td>
+                </tr>
+                <tr class="subtitle-row">
+                    <td><!-- empty cell --></td>
+                    <td>square</td>
+                    <td>bingo</td>
+                    <td>board</td>
+                </tr>
+            </table>
+
+            <div class="game-buttons">
+                <!-- <button id="save-button">save manually</button> -->
+                <!-- above button doesn't work yet -->
+                <button id="reset-button">re-shuffle board</button>
+            </div>
+
+            <button id="board-cleared" onclick="clearedBoardClicked()">
+                congratulations!<br>click to start a new game
+            </button>
+        </main>
+        <footer>&copy; 2026 Paige Carlson. All rights reserved.</footer>
+        <script type="module" src="script/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+body {
+    padding: 5vh 0;
+}
+header {
+    gap: 6vw;
+}
+main {
+    gap: 1vh;
+}
+
+h1 {
+    font-size: 8.5vmin;
+}
+
+.board {
+    margin: 5vmin;
+}
+.cell {
+    padding: 0.5cqi;
+    font-size: 3cqi;
+}
+
+.scores {
+    font-size: 4.5vmin;
+}
+#square-score, #bingo-score, #board-score {
+    font-size: 160%; /* change later? */
+}
+
+.game-buttons {
+    gap: 4vw;
+}
+button {
+    padding: 1vmin 3.5vmin;
+    border-radius: 1.4cqh;
+    font-size: 3.5vmin;
+}
+
+#full-list {
+    width: 80vw;
+}
+h2, #new-task-button {
+    font-size: 6.5vmin;
+}
+#active-tasks {
+    font-size: 3.7vmin;
+}
+#inactive-tasks {
+    font-size: 3.5vmin;
+}
+
+::-webkit-scrollbar {
+    width: 3.2vw;
+}
+::-webkit-scrollbar-button {
+    height: 3.2vw;
+    border-radius: 1cqi;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 1cqw;
+}
+
+#new-task {
+    width: 66.7vw;
+    border-radius: 8cqw;
+    font-size: 4cqw;
+}
+h3 {
+    font-size: 6.4cqw;
+}
+
+#score-menu {
+    height: 60vh;
+    font-size: 4vmin;
+    transform: translateY(-70vh);
+}
+#high-score, #last-score {
+    border-spacing: 3.5vw 0;
+}
+svg {
+    width: 90%;
+}
+path {
+    stroke-width: 1.5cqi;
+}
+svg text {
+    font-size: 7.5vmin;
+}
