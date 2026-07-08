@@ -207,7 +207,7 @@ function loadGame() {
         displayScore(); // imported function
         renderBoard(); // imported function
     } else {
-        location.replace("/HTML/TaskBingoV3/firstTasks.html"); // change this later make
+        location.replace("/firstTasks.html"); // make sure this works
         firstGame(); // local function
     }
 }
