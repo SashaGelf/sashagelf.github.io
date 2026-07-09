@@ -49,7 +49,7 @@ ftUpload.addEventListener("change", () => {
 
             if (firstTasks.length >= 24) {
                 localStorage.setItem("firstTasks", JSON.stringify(firstTasks));
-                location.replace("/HTML/TaskBingoV3/index.html");
+                location.replace("/index.html");
                 // change that url later make
             }
         }
