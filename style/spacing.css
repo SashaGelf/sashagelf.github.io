@@ -1,0 +1,60 @@
+body {
+    height: 100vh;
+    margin: 0;
+}
+main {
+    height: 100%;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.board {
+    aspect-ratio: 1/1;
+}
+.cell {
+    margin: 0;
+    aspect-ratio: 1/1;
+}
+
+.first-tasks-main {
+    height: auto;
+}
+#hint-close {
+    width: 50%;
+}
+
+#full-list {
+    height: 100vh;
+}
+.header-div, #new-task-button {
+    width: 100%;
+    height: var(--list-hf-height);
+}
+.scrollable {
+    width: 100%;
+    height: var(--list-height);
+}
+#active-tasks, #inactive-tasks {
+    width: 100%;
+}
+#new-task-button {
+    border-radius: 0;
+}
+
+#new-task {
+    aspect-ratio: 2/3;
+}
+
+#score-menu {
+    width: 100vw;
+}
+
+#board-cleared {
+    width: 50vmin;
+    height: 50vmin;
+    aspect-ratio: 1/1;
+    border-radius: 49%;
+}

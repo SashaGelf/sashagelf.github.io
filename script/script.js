@@ -207,7 +207,7 @@ function loadGame() {
         displayScore(); // imported function
         renderBoard(); // imported function
     } else {
-        location.replace("/firstTasks.html"); // make sure this works
+        location.replace("/firstTasks.html");
         firstGame(); // local function
     }
 }

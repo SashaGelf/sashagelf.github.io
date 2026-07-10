@@ -1,20 +1,5 @@
 import { score, scoreHistory, saveScore } from "./script.js";
 
-// import { scoreHistory } from "./script.js";
-// TESTING, DELETE LATER make
-const testScoreHistory = [
-    {square: 5, bingo: 3, board: 1, date: new Date(2026, 4, 1)},
-    {square: 3, bingo: 2, board: 0, date: new Date(2026, 4, 2)},
-    {square: 1, bingo: 0, board: 0, date: new Date(2026, 4, 3)},
-    {square: 7, bingo: 2, board: 0, date: new Date(2026, 4, 4)},
-    {square: 6, bingo: 3, board: 1, date: new Date(2026, 4, 5)},
-    {square: 4, bingo: 0, board: 0, date: new Date(2026, 4, 6)}
-];
-// let scoreHistory = testScoreHistory;
-// TESTING, DELETE THAT LATER make
-// I'll have to wait a couple days to see if scoreHistory is actually working lol
-
-
 const scoreDisplaySquare = document.getElementById("square-score");
 const scoreDisplayBingo = document.getElementById("bingo-score");
 const scoreDisplayBoard = document.getElementById("board-score");
@@ -55,7 +40,7 @@ export function makeScoreBoard() {
     today.setHours(0, 0, 0, 0);
 
     if (scoreHistory.length > 0) {
-        let highestScore = scoreHistory.reduce((max, item) => item.square > max.square ? item : max);
+        let highestScore = scoreHistory.reduce((max, item) => item.square > max.square ? item : max) // make sure this works now
         putEmUp(highScoreTable, highestScore); // local function
         let highDay = new Date(highestScore.date);
         highDateDiv.innerHTML = "from " + highDay.toLocaleDateString("en-US", {day: "numeric", month: "long", year: "numeric"});
@@ -104,7 +89,7 @@ function dateDiffString(date1, date2) {
 }
 // I could MAKE it so that it says "1 week ago" instead of "1 weeks ago" etc etc
 // but that would be a lot of work for little payoff
-// maybe save that for later, so I can have some changes in my git library
+// maybe save that for later
 
 const squarePath = document.getElementById("squarePath");
 const bingoPath = document.getElementById("bingoPath");
@@ -120,7 +105,7 @@ function lookAtThisGraph() {
     if (scoreHistory.length < 5) {return;}
     if (!scoreHistory[0].square) {return;}
     // for if there's no data or not enough data
-    // fix this later lmao MAKE
+    // make this work later
     
     const fiveDayHist = scoreHistory.slice(-5);
 

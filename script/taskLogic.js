@@ -31,9 +31,8 @@ function pushActiveInactive() {
 //        if (taskInactive[i].active == false && taskInactive[i].due == undefined) {
 //            console.error("schedule error");
 //            alert("schedule error");
-            // idk if this would happen but just in case
 //        }
-// fix????????????? make
+// make this make sense lol
     }
     // move inactive tasks from taskActive to taskInactive
     for (let i = (taskActive.length - 1); i >=0; i --) {

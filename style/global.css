@@ -1,32 +1,78 @@
-/* cherry bomb one import url here */
+/* IMPORTED FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cause:wght@100..900');
-/* font ktegaki is by spicy-sweet font.spicy-sweet.com */
+/* font ktegaki is by spicy-sweet @ font.spicy-sweet.com */
 
 @font-face {
     font-family: "Cherry Bomb One";
-    src: url(assets/CherryBombOne-Regular.ttf);
+    src: url("assets/CherryBombOne-Regular.ttf"), url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap");
 }
 @font-face {
     font-family: "Cause";
-    src: url(assets/Cause-VariableFont_wght.ttf);
+    src: url("assets/Cause-VariableFont_wght.ttf"), url("https://fonts.googleapis.com/css2?family=Cause:wght@100..900");
 }
 @font-face {
     font-family: "KTEGAKI";
-    src: url(assets/KTEGAKI.ttf);
+    src: url("assets/KTEGAKI.ttf");
 }
 
+/* ROOT VARIABLES */
+:root {
+    /* COLOR PALETTE */
+    --white: #ffffff;
+    --tl-white: #ffffff80;
+    --off-white: #fffafa;
+    --lighter-grey: #f3f3f3;
+    --light-grey: #ececec;
+    --text-grey: #766666;
+    --text-black: #381a28;
 
+    --tl-pink: #ffe8eb5a;
+    --input-bg-pink: #ffe8eb;
+    --bg-pink: #ffdcdd;
+    --free-space-pink: #ffc7cd;
+    --square-pink: #ffb1b6;
+    --button-pink: #ff95a6;
+    --checked-pink: #ff7295;
+    --text-pink: #ff408b;
 
-/* ---------- misc special stuff ---------- */
+    --purple: #c94685;
+    --blue: rgb(83, 49, 136);
+    --score-yellow: #ffff8c;
 
-/* BOX SIZING */
+    /* FONT FAMILIES */
+    --bubble: "Cherry Bomb One", "Arial Rounded MT Bold", "Arial Rounded MT", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --cute: "KTEGAKI", "Cause", "Calibri", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --classic: "Calibri", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* SPACING */
+    --list-height: 87vh;
+    --list-hf-height: calc((100 - var(--list-height)) / 2);
+}
+
+/* GLOBALS */
 * {box-sizing: border-box;}
 
-/* USER SELECT */
+/* USER SELECTION AND CURSOR */
 body {user-select: none;}
 #active-tasks, #inactive-tasks {user-select: contain;}
 
+@media (pointer: fine) {
+    header img, .cell, button,
+    #active-tasks, #inactive-tasks {
+        cursor: pointer;
+    }
+    .cell.marked, .cell.free {
+        cursor: default;
+    }
+}
+
 /* Z-INDEX */
+@media (hover: hover) {
+    .cell.free:hover {z-index: 5;}
+    .cell.marked:hover {z-index: 10;}
+    .cell:hover {z-index: 15;}
+}
 header {z-index: 20;}
 #score-menu {z-index: 25;}
 #full-list {z-index: 50;}
@@ -36,461 +82,18 @@ header {z-index: 20;}
 #new-task {z-index: 75;}
 #board-cleared {z-index: 100;}
 
-
-
-/* ---------- display, flex, positioning, etc ---------- */
-
-/* DISPLAY */
-body, header, main, .board, .cell, .game-buttons, .header-div, #score-menu, .table-div,
-#new-task.visible {
-    display: flex;
-}
-#new-task,
-#board-cleared {
-    display: none;
-}
-
-/* FLEX DIRECTION */
-body, main, #new-task, #score-menu, .table-div {
-    flex-direction: column;
-}
-.board, .game-buttons {
-    flex-direction: row;
-}
-
-/* JUSTIFY CONTENT AND ALIGN ITEMS*/
-main, .board, .cell, .header-div, .table-div,
-#board-cleared {
-    justify-content: center;
-    align-items: center;
-}
-#new-task {
-    justify-content: space-around;
-    align-items: center;
-}
-body, #score-menu {
-    justify-content: space-evenly;
-    align-items: center;
-}
-header, #new-task-button,
-#board-cleared {
-    align-items: center;
-}
-
-/* POSITION */
-#full-list, .header-div, .scrollable, #new-task-button, #new-task, #score-menu,
-#board-cleared {
-    position: absolute;
-}
-#full-list, .header-div, #score-menu {
-    top: 0;
-}
-.scrollable {
-    top: 6.5vh;
-}
-#full-list, .header-div, .scrollable, #new-task-button, #score-menu {
-    left: 0;
-}
-#new-task-button {
-    bottom: 0;
-}
-
-/* OVERFLOW */
-.cell, button {
-    overflow: hidden;
-}
-.scrollable {
-    overflow-y: auto;
-}
-
-/* MISC FLEX, WRAP, ALIGNMENT, ETC */
-.board {
-    flex-wrap: wrap;
-}
-.cell {
-    flex: 0 0 calc(20% - (2vmin*4/5));
-    word-wrap: break-word;
-}
-.scores tr:nth-child(odd) {
-    vertical-align: baseline;
-}
-#new-task {
-    flex-wrap: wrap;
-    word-wrap: normal;
-}
-
-/* TRANSITION */
-#full-list, #score-menu {
-    transition: all 0.2s ease-out;
-}
-#full-list.visible, #score-menu.visible {
-    transition: all 0.2s ease-in;
-}
-
-/* TRANSFORM */
-#full-list {
-    transform: translateX(-100vw);
-}
-#full-list.visible {
-    transform: translateX(0vw);
-}
-#score-menu.visible {
-    transform: translateY(0vh);
-}
-
-
-
-/* ---------- font stuff ---------- */
-
-/* FONT FAMILY */
-h1, button, .header-div, h2, h3 {
-    font-family: "Cherry Bomb One", "Arial Rounded MT Bold", "Arial Rounded MT", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.cell, .scores, input, #active-tasks, #inactive-tasks, #new-task, #score-menu, .first-tasks-main {
-    font-family: "KTEGAKI", "Cause", "Calibri", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-footer {
-    font-family: "Calibri", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* FONT COLOR */
-.cell, button, .header-div, #new-task, .first-tasks-main {
-    color: #ffffff;
-}
-h3 {
-    color: #ffdcdd;
-}
-h1, .scores {
-    color: #ff408b;
-}
-footer, #inactive-tasks, #first-tasks-hint {
-    color: #766666;
-}
-input, #active-tasks {
-    color: #381a28;
-}
-#score-menu {
-    color: #ffff8c;
-}
-
-/* FONT WEIGHT AND STYLE */
-h1, .cell, .scores, input, #new-task, #score-menu {
-    font-weight: bold;
-}
-.subtitle-row, h2, h3, .hint, #high-date, #last-date, #today-date, #table-label,
-#board-cleared {
-    font-weight: normal;
-}
-#inactive-tasks {
-    font-style: italic;
-}
-
-/* TEXT ALIGNMENT */
-body, header, footer, h1, .cell, button, input, #new-task,
-#board-cleared {
-    text-align: center;
-}
-
-
-
-/* ---------- design stuff ---------- */
-
-/* BACKGROUND */
-#full-list {
-    background-color: #ffffff;
-}
+/* SCROLLBAR */
 ::-webkit-scrollbar-track {
-    background-color: #ffffff80;
+    background-color: var(--tl-white);
 }
-#inactive-tasks {
-    background-color: #f3f3f3;
+::-webkit-scrollbar-button {
+    background-color: var(--free-space-pink);
 }
-#inactive-tasks tr:nth-child(even) {
-    background-color: #ececec;
-}
-#active-tasks {
-    background-color: #fffafa;
-}
-input, #active-tasks tr:nth-child(even) {
-    background-color: #ffe8eb;
-}
-svg {
-    background-color: #ffe8eb5a;
-}
-body, #first-tasks-hint {
-    background-color: #ffdcdd;
-}
-.cell.free, ::-webkit-scrollbar-button {
-    background-color: #ffc7cd;
-}
-.cell, ::-webkit-scrollbar-thumb, #ntConfirm {
-    background-color: #ffb1b6;
-}
-button, .header-div {
-    background-color: #ff95a6;
-}
-.cell.marked, #new-task, .first-tasks-main {
-    background-color: #ff7295;
-}
-#reset-button, #ntCancel {
-    background-color: #c94685;
-}
-#score-menu {
-    background:-webkit-linear-gradient(rgb(83, 49, 136), #c94685);
+::-webkit-scrollbar-thumb {
+    background-color: var(--square-pink);
+    border: none;
 }
 ::-webkit-scrollbar, ::-webkit-scrollbar-track-piece {
     background: transparent;
-}
-.cell.free {
-    background-image: url("../assets/freeSpace.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* BORDER */
-button, input, .header-div, ::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track-piece {
     border: none;
-}
-#inactive-tasks {
-    border-top: solid 2px #ff7295;
-}
-
-/* SHADOW */
-#full-list {
-    box-shadow: 1vw 0px 3vw 1vw #0000001b;
-}
-.header-div {
-    box-shadow: 0px 0.5vh 3vw 0px #0000003a;
-}
-#new-task-button {
-    box-shadow: 0px -0.5vh 3vw 0px #0000003a;
-}
-#new-task {
-    box-shadow: 0px 1px 4vmin 1vmin #0000003a;
-}
-#score-menu {
-    box-shadow: 0px 1vh 3vw 1vw #0000001b;
-    text-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
-}
-
-/* CORNERS */
-.cell {
-    border-radius: 15%;
-}
-input {
-    border-radius: 0.8cqh;
-}
-#new-task-button {
-    border-radius: 0;
-}
-
-/* SVG */
-path {
-    fill: none;
-    stroke: #ffff8c;
-    stroke-linecap: round;
-}
-path#guide {
-    stroke: #ff95a6;
-    stroke-dasharray: 8,12;
-}
-path#axis {
-    stroke: #ff7295;
-}
-svg text {
-    fill: #ffe8eb;
-}
-
-
-
-/* ---------- sizing stuff ---------- */
-
-header img {
-    width: 24px;
-    height: 24px;
-}
-/* make the star button slightly larger */
-/* adjust it to exist within the same bounds as the gear */
-/* also make sure the file sizes aren't too large */
-
-#score-menu {
-    width: 100vw;
-}
-.header-div, .scrollable, #active-tasks, #inactive-tasks, #new-task-button {
-    width: 100%;
-}
-body, #full-list {
-    height: 100vh;
-}
-main {
-    height: 100%;
-}
-.scrollable {
-    height: 87vh;
-}
-.header-div, #new-task-button {
-    height: 6.5vh;
-}
-body, h1, .cell, h2, h3 {
-    margin: 0;
-}
-h1, h2, h3 {
-    padding: 0;
-}
-
-h1, .scores {
-    letter-spacing: 0.22em;
-}
-h2, #new-task-button, h3 {
-    letter-spacing: 0.1em;
-}
-.cell, button {
-    letter-spacing: 0.08em;
-}
-#active-tasks, #inactive-tasks, #score-menu {
-    letter-spacing: 0.04em;
-}
-
-footer {
-    font-size: 1.75vmin;
-}
-.board {
-    gap: 2vmin;
-    aspect-ratio: 1/1;
-}
-.cell {
-    aspect-ratio: 1/1;
-    line-height: 85%;
-}
-.subtitle-row {
-    font-size: 85%;
-    letter-spacing: 0;
-}
-#active-tasks, #inactive-tasks {
-    tr td:nth-child(even) {
-        font-size: 90%;
-    }
-}
-#new-task-button {
-    font-size: 3.5vmin;
-}
-#new-task {
-    aspect-ratio: 2/3;
-    padding: 2.5vmin;
-}
-.hint {
-    font-size: 80%;
-}
-input {
-    padding: 0.5cqh;
-    font-size: 120%;
-}
-#high-date, #last-date, #today-date {
-    margin-bottom: 0.8vh;
-    font-size: 85%;
-}
-#table-label {
-    font-size: 70%;
-    letter-spacing: -0.05em;
-}
-
-
-
-.first-tasks-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    height: auto;
-    margin: 2% 4%; /* change later */
-    padding: 3%; /* change later */
-    /* modify for mobile */
-
-    border-radius: 5cqh;
-    /* modify for mobile */
-}
-/* maybe this page should just be scrollable */
-/* instead of trying so hard to make everything fit */
-#first-tasks-hint {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin: 1vmin;
-    padding: 1.5vmin; /* change */
-    /* modify for mobile */
-
-    border-radius: 2cqh; /* change maybe? */
-    /* modify for mobile */
-
-    font-size: 2.6vmin; /* change??? */
-    /* modify for mobile */
-    line-height: 110%;
-}
-#hint-close {
-    cursor: pointer;
-
-    width: 50%;
-    margin: 1.5vmin 0 0.5vmin 0; /* change later */
-    /* modify for mobile */
-}
-#first-tasks-tables-both {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
-    gap: 2vw; /* change later */
-    /* modify for mobile */
-}
-#first-tasks-tables-both th {
-    font-size: 2.8vmin;
-    /* modify for mobile */
-}
-#first-tasks-tables-both th:nth-child(odd) {
-    letter-spacing: 0.1em;
-}
-#first-tasks-tables-both input {
-    font-size: 2.7vmin;
-    /* modify for mobile */
-    letter-spacing: 0.05em;
-}
-#first-tasks-tables-both td:nth-child(odd) input {
-    width: 30cqi; /* maybe change? */
-    /* modify for mobile */
-}
-#first-tasks-submit {
-    cursor: pointer;
-}
-/* finish styling this page */
-
-
-
-/* STUFF I'M STILL WORKING ON */
-
-#options, #about {
-    display: none;
-
-    .visible {
-        display: flex;
-    }
-}
-/* replace this with a transform??? */
-
-
-
-/* ARRANGE THIS STUFF LATER */
-
-#board-cleared {
-    width: 50vmin;
-    height: 50vmin;
-    aspect-ratio: 1/1;
-
-    border-radius: 49%;
-    box-shadow: 0 0 10vmin 5vmin #0000003a, 0 0 5vmin 2vmin #0000003a;
-
-    font-size: 4cqi;
 }
