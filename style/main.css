@@ -1,0 +1,124 @@
+/* TRANSITIONS */ /* move this later? */
+#full-list, #score-menu {
+    transition: all 0.2s ease-out;
+}
+#full-list.visible, #score-menu.visible {
+    transition: all 0.2s ease-in;
+}
+
+#full-list {
+    transform: translateX(-100vw); /* maybe change? */
+}
+#full-list.visible {
+    transform: translateX(0vw);
+}
+#score-menu.visible {
+    transform: translateY(0vh);
+}
+
+/* CORNERS */
+.cell {
+    border-radius: 15%;
+}
+input {
+    border-radius: 0.8cqh;
+}
+
+header img {
+    width: 24px;
+    height: 24px;
+}
+/* make the star button slightly larger */
+/* adjust it to exist within the same bounds as the gear */
+/* also make sure the file sizes aren't too large */
+
+h1, .scores {
+    letter-spacing: 0.22em;
+}
+h2, #new-task-button, h3 {
+    letter-spacing: 0.1em;
+}
+.cell, button {
+    letter-spacing: 0.08em;
+}
+#active-tasks, #inactive-tasks, #score-menu {
+    letter-spacing: 0.04em;
+}
+
+.board {
+    gap: 2vmin;
+}
+.cell {
+    line-height: 85%;
+}
+.subtitle-row {
+    letter-spacing: 0;
+}
+
+#new-task {
+    padding: 2.5vmin;
+}
+
+input {
+    padding: 0.5cqh;
+}
+#high-date, #last-date, #today-date {
+    margin-bottom: 0.8vh;
+}
+#table-label {
+    letter-spacing: -0.05em;
+}
+
+.first-tasks-main {
+    margin: 2% 4%; /* change later */
+    padding: 3%; /* change later */
+    /* modify for mobile */
+
+    border-radius: 5cqh;
+    /* modify for mobile */
+}
+/* maybe this page should just be scrollable */
+/* instead of trying so hard to make everything fit */
+#first-tasks-hint {
+    margin: 1vmin;
+    padding: 1.5vmin; /* change */
+    /* modify for mobile */
+
+    border-radius: 2cqh; /* change maybe? */
+    /* modify for mobile */
+
+    /* modify for mobile */
+    line-height: 110%;
+}
+#hint-close {
+    margin: 1.5vmin 0 0.5vmin 0; /* change later */
+    /* modify for mobile */
+}
+#first-tasks-tables-both {
+    gap: 2vw; /* change later */
+    /* modify for mobile */
+}
+#first-tasks-tables-both th:nth-child(odd) {
+    letter-spacing: 0.1em;
+}
+#first-tasks-tables-both input {
+    /* modify for mobile */
+    letter-spacing: 0.05em;
+}
+#first-tasks-tables-both td:nth-child(odd) input {
+    width: 30cqi; /* maybe change? */
+    /* modify for mobile */
+}
+/* finish styling this page */
+
+
+
+/* STUFF I'M STILL WORKING ON */
+#options, #about {
+    display: none;
+
+    .visible {
+        display: flex;
+    }
+}
+/* replace this with a transform??? */

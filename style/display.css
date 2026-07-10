@@ -1,0 +1,99 @@
+/* clean this formatting up a bit */
+
+/* DISPLAY AND FLEX DIRECTION */
+body, header, main, .board, .cell, .game-buttons,
+#first-tasks-hint, #first-tasks-tables-both,
+.header-div, #new-task.visible,
+#score-menu, .table-div {
+    display: flex;
+}
+#new-task,
+#board-cleared {
+    display: none;
+}
+body, main,
+#first-tasks-hint,
+#new-task,
+#score-menu, .table-div {
+    flex-direction: column;
+}
+.board, .game-buttons,
+#first-tasks-tables-both {
+    flex-direction: row;
+}
+
+/* JUSTIFY AND ALIGN */
+main, .board, .cell,
+#first-tasks-hint,
+.header-div,
+.table-div,
+#board-cleared {
+    justify-content: center;
+    align-items: center;
+}
+body, #score-menu {
+    justify-content: space-evenly;
+    align-items: center;
+}
+#first-tasks-tables-both,
+#new-task {
+    justify-content: space-around;
+    align-items: center;
+}
+header,
+#new-task-button {
+    align-items: center;
+}
+
+/* TEXT ALIGNMENT */
+body, header, footer, .cell, h1, input, button,
+#new-task,
+#board-cleared {
+    text-align: center;
+}
+.scores tr:nth-child(odd) {
+    vertical-align: baseline;
+}
+
+/* OVERFLOW */
+.cell, button {
+    overflow: hidden;
+}
+.scrollable {
+    overflow-y: auto;
+}
+
+/* OTHER FLEX AND WRAP */
+.board {
+    flex-wrap: wrap;
+}
+.cell {
+    flex: 0 0 calc(20% - (2vmin*4/5));
+    word-wrap: break-word;
+}
+#new-task {
+    flex-wrap: wrap;
+    word-wrap: normal;
+}
+
+/* POSITIONING */
+#full-list, .header-div,
+#score-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.scrollable {
+    position: absolute;
+    top: var(--list-hf-height);
+    left: 0;
+}
+#new-task-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#new-task,
+#board-cleared {
+    position: absolute;
+}
