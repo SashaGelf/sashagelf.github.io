@@ -1,7 +1,9 @@
 # GENERAL
 - [x] Add current files to repo
-- [ ] Launch Github Page once code is functional
+- [x] Launch Github Page once code is functional
 - [ ] Double check my old "to do still.txt" file
+
+
 
 # ASSETS
 ## Images
@@ -19,6 +21,8 @@
 - [ ] Fix up elements and attributes (e.g. alt text on images) to improve accessability (and SEO)
 - [ ] Add label elements for accessability
 - [ ] Once I've created an icon, add link to icon to head of all pages
+
+
 
 # CSS
 ## General Layout
@@ -45,21 +49,23 @@
 - [ ] Animate bingo square transitions (horizontal "flip"?)
 - [ ] Would it be fun to try making a custom cursor???
 
+
+
 # JS
 ## "First Tasks" Section
-- [ ] Make sure importing task list option works
+- [x] Make sure importing task list option works
 - [ ] Create option to choose 24 tasks from a list of pre-made options (so you don't need to come up with 24 recurring tasks on the spot the first time you open the website)
 - [ ] Implement ability to create initial task list from a combination of both written tasks and selected pre-made tasks (just multiple sources in general)
 
 ## Score History Menu
 - [ ] Make sure this whole section is working now!
-- [ ] Make sure the issue on scoreLogic.js line 57 (is that still the correct line?) is fixed. The code should be able to reduce now
+- [ ] Make sure the issue on scoreLogic.js line 43 (is that still the correct line?) is fixed. The code should be able to reduce now
 
 ## Task Logic
 - [ ] Fix taskLogic.js line 49 (?)
 
 ## Saving and Loading
-- [ ] Fix the Manual Save button!
+- [ ] Check if manual save button is working
 
 ## Future Features
 - [ ] Create "settings" menu

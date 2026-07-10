@@ -35,8 +35,7 @@ ftSubmit.addEventListener("click", () => {
         firstTasks.push(customTask);
     }
     localStorage.setItem("firstTasks", JSON.stringify(firstTasks));
-    location.replace("/HTML/TaskBingoV3/index.html");
-    // make change that url later
+    location.replace("/index.html");
 });
 
 ftUpload.addEventListener("change", () => {
@@ -50,7 +49,6 @@ ftUpload.addEventListener("change", () => {
             if (firstTasks.length >= 24) {
                 localStorage.setItem("firstTasks", JSON.stringify(firstTasks));
                 location.replace("/index.html");
-                // change that url later make
             }
         }
         reader.readAsText(ftUpload.files[i]);
