@@ -4,14 +4,8 @@ body {
 header {
     gap: 6vw;
 }
-main {
-    gap: 1vh;
-}
 .board {
     margin: 5vmin;
-}
-.cell {
-    padding: 0.5cqi;
 }
 
 .game-buttons {
@@ -51,7 +45,4 @@ button {
 }
 svg {
     width: 90%;
-}
-path {
-    stroke-width: 1.5cqi;
 }

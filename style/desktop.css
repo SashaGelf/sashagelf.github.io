@@ -1,42 +1,11 @@
-body {
-    padding: 2vh 0;
-    gap: 1vh;
-}
 header {
     gap: 3vw;
-}
-main {
-    gap: 1vh;
 }
 
 .board {
     height: calc(97vmin * 2/3);
 }
-.cell {
-    padding: 0.2cqi;
-    
-    transform: scale(1);
-    transform-origin: center center;
-    transition: all 0.5s ease;
-}
-@media (hover: hover) {
-    .cell:hover {
-        transform: scale(1.5);
-        /* add shadow? */
-    }
-    .cell.marked:hover {
-        transform: scale(1.2);
-        /* add smaller shadow? */
-    }
-    .cell.free:hover {
-        transform: scale(1.05);
-        /* add teensy shadow? */
-    }
-}
 
-.game-buttons {
-    gap: 2vw;
-}
 button {
     padding: 0.5vmin 2.5vmin;
     border-radius: 1.9cqh;
@@ -71,7 +40,4 @@ button {
 }
 svg {
     height: 50%;
-}
-path {
-    stroke-width: 0.75cqi;
 }
