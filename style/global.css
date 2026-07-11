@@ -5,17 +5,17 @@
 
 @font-face {
     font-family: "Cherry Bomb One";
-    src: url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap"),
-    url("assets/CherryBombOne-Regular.ttf") format("tff");
+    src: url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap") format("woff2"),
+    url("/fonts/CherryBombOne-Regular.ttf") format("tff");
 }
 @font-face {
     font-family: "Cause";
-    src: url("https://fonts.googleapis.com/css2?family=Cause:wght@100..900"),
-    url("assets/Cause-VariableFont_wght.ttf") format("tff");
+    src: url("https://fonts.googleapis.com/css2?family=Cause:wght@100..900") format("woff2"),
+    url("/fonts/Cause-VariableFont_wght.ttf") format("tff");
 }
 @font-face {
     font-family: "KTEGAKI";
-    src: url("assets/KTEGAKI.ttf") format("tff");
+    src: url("/fonts/KTEGAKI.ttf") format("tff");
 }
 
 /* ROOT VARIABLES */
