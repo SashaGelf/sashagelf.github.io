@@ -1,9 +1,12 @@
 body {
     height: 100vh;
     margin: 0;
+    padding: var(--board-gap);
+    gap: var(--small-space);
 }
 main {
     height: 100%;
+    gap: var(--small-space);
 }
 
 h1, h2, h3 {
@@ -13,14 +16,27 @@ h1, h2, h3 {
 
 .board {
     aspect-ratio: 1/1;
+    gap: var(--board-gap);
 }
 .cell {
-    margin: 0;
     aspect-ratio: 1/1;
+    margin: 0;
+    padding: var(--tiny-space);
+}
+
+.game-buttons {
+    gap: var(--board-gap);
+}
+
+input {
+    padding: var(--tiny-space);
 }
 
 .first-tasks-main {
     height: auto;
+}
+#first-tasks-hint {
+    margin: var(--small-space);
 }
 #hint-close {
     width: 50%;
@@ -46,10 +62,14 @@ h1, h2, h3 {
 
 #new-task {
     aspect-ratio: 2/3;
+    padding: var(--board-gap);
 }
 
 #score-menu {
     width: 100vw;
+}
+#high-date, #last-date, #today-date {
+    margin-bottom: var(--small-space);
 }
 
 #board-cleared {

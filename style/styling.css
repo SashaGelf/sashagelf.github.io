@@ -5,19 +5,14 @@ body {
 footer {
     color: var(--text-grey);
     font-family: var(--classic);
-    font-size: 1.75vmin; /* change? */
+    font-size: var(--small);
 }
 
 h1 {
     color: var(--text-pink);
     font-family: var(--bubble);
-    font-size: 5vmin; /* change? */ /* desktop */
+    font-size: var(--title);
     font-weight: bold;
-}
-@media (max-width: 768px) {
-    h1 {
-        font-size: 8.5vmin; /* change? */
-    }
 }
 
 .cell {
@@ -25,16 +20,8 @@ h1 {
 
     color: var(--white);
     font-family: var(--cute);
-    font-size: 2vmin; /* change? */ /* desktop */
+    font-size: var(--small);
     font-weight: bold;
-}
-@media (max-width: 768px) {
-    .cell {
-        font-size: 3cqi; /* change? */
-    }
-}
-.cell:hover /* this whole thing is for desktop */ {
-    background-color: var(--button-pink);
 }
 .cell.free {
     background-color: var(--free-space-pink);
@@ -47,28 +34,26 @@ h1 {
 .cell.marked {
     background-color: var(--checked-pink);
 }
+@media (hover: hover) {
+    .cell:hover {
+        background-color: var(--button-pink);
+        /* add shadow */
+    }
+    /* add smaller shadow on .cell.marked:hover */
+    /* add teensy shadow on .cell.free:hover */
+}
 
 .scores {
     color: var(--text-pink);
     font-family: var(--cute);
-    font-size: 2.5vmin; /* change? */ /* desktop */
+    font-size: var(--standard);
     font-weight: bold;
 }
-@media (max-width: 768px) {
-    .scores {
-        font-size: 4.5vmin; /* change? */
-    }
-}
 #square-score, #bingo-score, #board-score {
-    font-size: 200%; /* change? */ /* desktop */
-}
-@media (max-width: 768px) {
-    #square-score, #bingo-score, #board-score {
-        font-size: 200%; /* change? */
-    }
+    font-size: var(--title);
 }
 .subtitle-row {
-    font-size: 85%; /* change? */
+    font-size: var(--semi-small);
     font-weight: normal;
 }
 
@@ -78,12 +63,7 @@ button {
 
     color: var(--white);
     font-family: var(--bubble);
-    font-size: 2.5vmin; /* change? */ /* desktop */
-}
-@media (max-width: 768px) {
-    button {
-        font-size: 3.5vmin; /* change? */
-    }
+    font-size: var(--standard);
 }
 #reset-button {
     background-color: var(--purple);
@@ -95,7 +75,7 @@ input {
 
     color: var(--text-black);
     font-family: var(--cute);
-    font-size: 120%; /* of what? */ /* change? */
+    font-size: var(--big);
     font-weight: bold;
 }
 
@@ -109,13 +89,13 @@ input {
     background-color: var(--bg-pink);
 
     color: var(--text-grey);
-    font-size: 2.6vmin; /* change? */ /* modify for mobile */
+    font-size: var(--small);
 }
 #first-tasks-tables-both th {
-    font-size: 2.8vmin; /* change? */ /* modify for mobile */
+    font-size: var(--semi-big);
 }
 #first-tasks-tables-both input {
-    font-size: 2.7vmin; /* change? */ /* modify for mobile */
+    font-size: var(--standard);
 }
 
 #full-list {
@@ -130,25 +110,15 @@ input {
 h2 {
     color: var(--white);
     font-family: var(--bubble);
-    font-size: 3.5vmin; /* change? */ /* desktop */
+    font-size: var(--subtitle);
     font-weight: normal;
-}
-@media (max-width: 768px) {
-    h2 {
-        font-size: 6.5vmin; /* change? */
-    }
 }
 #active-tasks {
     background-color: var(--off-white);
 
     color: var(--text-black);
     font-family: var(--cute);
-    font-size: 2.6vmin; /* change? */ /* desktop */
-}
-@media (max-width: 768px) {
-    #active-tasks {
-        font-size: 3.7vmin; /* change? */
-    }
+    font-size: var(--standard);
 }
 #active-tasks tr:nth-child(even) {
     background-color: var(--input-bg-pink);
@@ -160,30 +130,20 @@ h2 {
     color: var(--text-grey);
     font-family: var(--cute);
     font-style: italic;
-    font-size: 2.45vmin; /* change? */ /* desktop */
-}
-@media (max-width: 768px) {
-    #inactive-tasks {
-        font-size: 3.5vmin; /* change? */
-    }
+    font-size: var(--semi-small);
 }
 #inactive-tasks tr:nth-child(even) {
     background-color: var(--light-grey);
 }
 #active-tasks, #inactive-tasks {
     tr td:nth-child(even) {
-        font-size: 90%; /* change? */
+        font-size: 90%;
     }
 }
 #new-task-button {
     box-shadow: 0px -0.5vh 3vw 0px #0000003a;
 
-    font-size: 3.5vmin; /* change? */ /* desktop */
-}
-@media (max-width: 768px) {
-    #new-task-button {
-        font-size: 6.5vmin; /* change? */
-    }
+    font-size: var(--subtitle);
 }
 
 #new-task {
@@ -192,27 +152,17 @@ h2 {
 
     color: var(--white);
     font-family: var(--cute);
-    font-size: 2cqw; /* change? */ /* desktop */
+    font-size: var(--standard);
     font-weight: bold;
-}
-@media (max-width: 768px) {
-    #new-task {
-        font-size: 4cqw; /* change? */
-    }
 }
 h3 {
     color: var(--bg-pink);
     font-family: var(--bubble);
-    font-size: 3.2cqw; /* change? */ /* desktop */
+    font-size: var(--subtitle);
     font-weight: normal;
 }
-@media (max-width: 768px) {
-    h3 {
-        font-size: 6.4cqw; /* change? */
-    }
-}
 .hint {
-    font-size: 80%; /* change? */
+    font-size: var(--small);
     font-weight: normal;
 }
 #ntConfirm {
@@ -229,20 +179,15 @@ h3 {
     color: var(--yellow);
     text-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
     font-family: var(--cute);
-    font-size: 3vmin; /* change? */ /* desktop */
+    font-size: var(--big);
     font-weight: bold;
 }
-@media (max-width: 768px) {
-    #score-menu {
-        font-size: 4vmin; /* change? */
-    }
-}
 #high-date, #last-date, #today-date {
-    font-size: 85%; /* change? */
+    font-size: var(--standard);
     font-weight: normal;
 }
 #table-label {
-    font-size: 70%; /* change? */
+    font-size: var(--semi-small);
     font-weight: normal;
 }
 svg {
@@ -251,7 +196,13 @@ svg {
 path {
     fill: none;
     stroke: var(--yellow);
+    stroke-width: 1vmin;
     stroke-linecap: round;
+}
+@media (max-width: 768px) {
+    path {
+        stroke-width: 2vmin;
+    }
 }
 path#guide {
     stroke: var(--button-pink);
@@ -262,17 +213,12 @@ path#axis {
 }
 svg text {
     fill: var(--input-bg-pink);
-    font-size: 4.5vmin; /* change? */ /* desktop */
-}
-@media (max-width: 768px) {
-    svg text {
-        font-size: 7.5vmin; /* change? */
-    }
+    font-size: var(--title);
 }
 
 #board-cleared {
     box-shadow: 0 0 10vmin 5vmin #0000003a, 0 0 5vmin 2vmin #0000003a;
 
-    font-size: 4cqi; /* change? */
+    font-size: var(--title);
     font-weight: normal;
 }

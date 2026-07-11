@@ -97,3 +97,21 @@ body, header, footer, .cell, h1, input, button,
 #board-cleared {
     position: absolute;
 }
+
+/* TRANSITIONS */
+@media (hover: hover) {
+    .cell {
+        transform: scale(1);
+        transform-origin: center center;
+        transition: all 0.5s ease;
+    }
+    .cell:hover {
+        transform: scale(1.5);
+    }
+    .cell.free:hover {
+        transform: scale(1.05);
+    }
+    .cell.marked:hover {
+        transform: scale(1.2);
+    }
+}

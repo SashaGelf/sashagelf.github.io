@@ -5,15 +5,17 @@
 
 @font-face {
     font-family: "Cherry Bomb One";
-    src: url("assets/CherryBombOne-Regular.ttf"), url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap");
+    src: url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap"),
+    url("assets/CherryBombOne-Regular.ttf") format("tff");
 }
 @font-face {
     font-family: "Cause";
-    src: url("assets/Cause-VariableFont_wght.ttf"), url("https://fonts.googleapis.com/css2?family=Cause:wght@100..900");
+    src: url("https://fonts.googleapis.com/css2?family=Cause:wght@100..900"),
+    url("assets/Cause-VariableFont_wght.ttf") format("tff");
 }
 @font-face {
     font-family: "KTEGAKI";
-    src: url("assets/KTEGAKI.ttf");
+    src: url("assets/KTEGAKI.ttf") format("tff");
 }
 
 /* ROOT VARIABLES */
@@ -38,16 +40,41 @@
 
     --purple: #c94685;
     --blue: rgb(83, 49, 136);
-    --score-yellow: #ffff8c;
+    --yellow: #ffff8c;
 
     /* FONT FAMILIES */
     --bubble: "Cherry Bomb One", "Arial Rounded MT Bold", "Arial Rounded MT", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --cute: "KTEGAKI", "Cause", "Calibri", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --classic: "Calibri", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+    /* FONT SIZES */
+    --small: 1.75vmin;
+    --semi-small: 2.1vmin;
+    --standard: 2.5vmin;
+    --semi-big: 2.8vmin;
+    --big: 3vmin;
+    --subtitle: 3.5vmin;
+    --title: 5vmin;
+
     /* SPACING */
     --list-height: 87vh;
-    --list-hf-height: calc((100 - var(--list-height)) / 2);
+    --list-hf-height: calc((100vh - var(--list-height)) / 2);
+
+    --tiny-space: 0.5vh;
+    --small-space: 1vh;
+    --board-gap: 2vh;
+}
+@media (max-width: 768px) {
+    :root {
+        /* MOBILE FONT SIZES */
+        --small: 3vmin;
+        --semi-small: 3.5vmin;
+        --standard: 4vmin;
+        --semi-big: 4vmin; /* change? */
+        --big: 4vmin; /* change? */
+        --subtitle: 6.5vmin;
+        --title: 8vmin;
+    }
 }
 
 /* GLOBALS */

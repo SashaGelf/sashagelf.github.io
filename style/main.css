@@ -45,9 +45,6 @@ h2, #new-task-button, h3 {
     letter-spacing: 0.04em;
 }
 
-.board {
-    gap: 2vmin;
-}
 .cell {
     line-height: 85%;
 }
@@ -55,16 +52,6 @@ h2, #new-task-button, h3 {
     letter-spacing: 0;
 }
 
-#new-task {
-    padding: 2.5vmin;
-}
-
-input {
-    padding: 0.5cqh;
-}
-#high-date, #last-date, #today-date {
-    margin-bottom: 0.8vh;
-}
 #table-label {
     letter-spacing: -0.05em;
 }
@@ -80,7 +67,6 @@ input {
 /* maybe this page should just be scrollable */
 /* instead of trying so hard to make everything fit */
 #first-tasks-hint {
-    margin: 1vmin;
     padding: 1.5vmin; /* change */
     /* modify for mobile */
 
