@@ -1,36 +1,47 @@
-/* TRANSITIONS */ /* move this later? */
-#full-list, #score-menu {
-    transition: all 0.2s ease-out;
-}
-#full-list.visible, #score-menu.visible {
-    transition: all 0.2s ease-in;
-}
-
-#full-list {
-    transform: translateX(-100vw); /* maybe change? */
-}
-#full-list.visible {
-    transform: translateX(0vw);
-}
-#score-menu.visible {
-    transform: translateY(0vh);
-}
-
-/* CORNERS */
 .cell {
     border-radius: 15%;
+}
+button {
+    border-radius: 1.9cqh;
+}
+@media (max-width: 768px) {
+    button {
+        border-radius: 1.4cqh;
+    }
+}
+::-webkit-scrollbar-button {
+    border-radius: 0.06cqi;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 0.6cqw;
+}
+@media (max-width: 768px) {
+    ::-webkit-scrollbar-button {
+        border-radius: 1cqi;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1cqw;
+    }
 }
 input {
     border-radius: 0.8cqh;
 }
-
-header img {
-    width: 24px;
-    height: 24px;
+.first-tasks-main {
+    border-radius: 5cqh;
+    /* modify for mobile */
 }
-/* make the star button slightly larger */
-/* adjust it to exist within the same bounds as the gear */
-/* also make sure the file sizes aren't too large */
+#first-tasks-hint {
+    border-radius: 2cqh; /* change maybe? */
+    /* modify for mobile */
+}
+#new-task {
+    border-radius: 4cqw;
+}
+@media (max-width: 768px) {
+    #new-task {
+        border-radius: 8cqw;
+    }
+}
 
 h1, .scores {
     letter-spacing: 0.22em;
@@ -44,45 +55,11 @@ h2, #new-task-button, h3 {
 #active-tasks, #inactive-tasks, #score-menu {
     letter-spacing: 0.04em;
 }
-
-.cell {
-    line-height: 85%;
-}
 .subtitle-row {
     letter-spacing: 0;
 }
-
 #table-label {
     letter-spacing: -0.05em;
-}
-
-.first-tasks-main {
-    margin: 2% 4%; /* change later */
-    padding: 3%; /* change later */
-    /* modify for mobile */
-
-    border-radius: 5cqh;
-    /* modify for mobile */
-}
-/* maybe this page should just be scrollable */
-/* instead of trying so hard to make everything fit */
-#first-tasks-hint {
-    padding: 1.5vmin; /* change */
-    /* modify for mobile */
-
-    border-radius: 2cqh; /* change maybe? */
-    /* modify for mobile */
-
-    /* modify for mobile */
-    line-height: 110%;
-}
-#hint-close {
-    margin: 1.5vmin 0 0.5vmin 0; /* change later */
-    /* modify for mobile */
-}
-#first-tasks-tables-both {
-    gap: 2vw; /* change later */
-    /* modify for mobile */
 }
 #first-tasks-tables-both th:nth-child(odd) {
     letter-spacing: 0.1em;
@@ -91,13 +68,100 @@ h2, #new-task-button, h3 {
     /* modify for mobile */
     letter-spacing: 0.05em;
 }
+
+.cell {
+    line-height: 85%;
+}
+#first-tasks-hint {
+    line-height: 110%;
+    /* modify for mobile */
+}
+
+#high-score, #last-score {
+    border-spacing: 2.5vw 0;
+}
+@media (max-width: 768px) {
+    #high-score, #last-score {
+        border-spacing: 3.5vw 0;
+    }
+}
+
 #first-tasks-tables-both td:nth-child(odd) input {
     width: 30cqi; /* maybe change? */
     /* modify for mobile */
 }
-/* finish styling this page */
+::-webkit-scrollbar {
+    width: 1.8vw;
+}
+::-webkit-scrollbar-button {
+    height: 1.8vw;
+}
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 3.2vw;
+    }
+    ::-webkit-scrollbar-button {
+        height: 3.2vw;
+    }
+}
+#new-task {
+    width: 33.3vw;
+}
+@media (max-width: 768px) {
+    #new-task {
+        width: 66.7vw;
+    }
+}
 
+.board {
+    height: calc(97vmin * 2/3);
+}
+@media (max-width: 768px) {
+    .board {
+        margin: 5vmin;
+    }
+}
 
+.first-tasks-main {
+    margin: 2% 4%; /* change later */
+    padding: 3%; /* change later */
+    /* modify for mobile */
+}
+#hint-close {
+    margin: 1.5vmin 0 0.5vmin 0; /* change later */
+    /* modify for mobile */
+}
+#first-tasks-hint {
+    padding: 1.5vmin; /* change */
+    /* modify for mobile */
+}
+button {
+    padding: 0.5vmin 2.5vmin;
+}
+@media (max-width: 768px) {
+    .game-buttons {
+        gap: 4vw;
+    }
+
+    button {
+        padding: 1vmin 3.5vmin;
+    }
+}
+header {
+    gap: 3vw;
+}
+@media (max-width: 768px) {
+    body {
+        padding: 5vh 0;
+    }
+    header {
+        gap: 6vw;
+    }
+}
+#first-tasks-tables-both {
+    gap: 2vw; /* change later */
+    /* modify for mobile */
+}
 
 /* STUFF I'M STILL WORKING ON */
 #options, #about {

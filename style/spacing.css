@@ -9,6 +9,11 @@ main {
     gap: var(--small-space);
 }
 
+header img {
+    width: var(--icon-button);
+    height: var(--icon-button);
+    aspect-ratio: 1/1;
+}
 h1, h2, h3 {
     margin: 0;
     padding: 0;
@@ -43,6 +48,7 @@ input {
 }
 
 #full-list {
+    width: var(--list-width);
     height: 100vh;
 }
 .header-div, #new-task-button {
@@ -67,9 +73,20 @@ input {
 
 #score-menu {
     width: 100vw;
+    height: var(--score-menu-height);
 }
 #high-date, #last-date, #today-date {
     margin-bottom: var(--small-space);
+}
+@media (min-width: 769px) {
+    svg {
+        height: 50%;
+    }
+}
+@media (max-width: 768px) {
+    svg {
+        width: 90%;
+    }
 }
 
 #board-cleared {

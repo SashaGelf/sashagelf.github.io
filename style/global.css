@@ -57,8 +57,13 @@
     --title: 5vmin;
 
     /* SPACING */
+    --icon-button: 24px;
+
+    --list-width: calc((100vw) * 2 / 3);
     --list-height: 87vh;
     --list-hf-height: calc((100vh - var(--list-height)) / 2);
+
+    --score-menu-height: 80vh;
 
     --tiny-space: 0.5vh;
     --small-space: 1vh;
@@ -74,6 +79,13 @@
         --big: 4vmin; /* change? */
         --subtitle: 6.5vmin;
         --title: 8vmin;
+
+        /* MOBILE SPACING */
+        --icon-button: 48px;
+
+        --list-width: 80vw;
+
+        --score-menu-height: 60vh;
     }
 }
 
