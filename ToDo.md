@@ -33,7 +33,7 @@
 ## Color and Font
 - [ ] Finish styling text and input on "first tasks" section
 - [ ] Consider changing the fonts for the "first tasks" menu and the full task list (maybe some other places too). Perhaps something calibri-ish, so longer sections of text are streamlined with less non-standard "character".
-- [ ] Utilise :root for quick access to the color palette and standardized sizing
+- [x] Utilise :root for quick access to the color palette and standardized sizing
 
 ## Spacing
 - [ ] Make spacing and sizing more cohesive
