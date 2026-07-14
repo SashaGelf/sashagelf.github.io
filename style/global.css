@@ -1,128 +1,93 @@
-/* IMPORTED FONTS */
-@font-face {
-    font-family: "KTEGAKI";
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-    src: url(../fonts/KTEGAKI.ttf) format("tff");
+/* ctrl-f "change" */
+/* change all px? try at different viewport widths */
+
+::-webkit-scrollbar {
+    width: 15px;
+
+    background: transparent;
+    border: none;
 }
-/* font ktegaki is by spicy-sweet @ font.spicy-sweet.com */
-
-/* ROOT VARIABLES */
-:root {
-    /* COLOR PALETTE */
-    --white: #ffffff;
-    --tl-white: #ffffff80;
-    --off-white: #fffafa;
-    --lighter-grey: #f3f3f3;
-    --light-grey: #ececec;
-    --text-grey: #766666;
-    --text-black: #381a28;
-
-    --tl-pink: #ffe8eb5a;
-    --input-bg-pink: #ffe8eb;
-    --bg-pink: #ffdcdd;
-    --free-space-pink: #ffc7cd;
-    --square-pink: #ffb1b6;
-    --button-pink: #ff95a6;
-    --checked-pink: #ff7295;
-    --text-pink: #ff408b;
-
-    --purple: #c94685;
-    --blue: rgb(83, 49, 136);
-    --yellow: #ffff8c;
-
-    /* FONT FAMILIES */
-    --bubble: "Cherry Bomb One", "Arial Rounded MT Bold", "Arial Rounded MT", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --cute: "KTEGAKI", "Cause", "Calibri", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --classic: "Calibri", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    /* FONT SIZES */
-    --small: 1.75vmin;
-    --semi-small: 2.1vmin;
-    --standard: 2.5vmin;
-    --semi-big: 2.8vmin;
-    --big: 3vmin;
-    --subtitle: 3.5vmin;
-    --title: 5vmin;
-
-    /* SPACING */
-    --icon-button: 24px;
-
-    --list-width: calc((100vw) * 2 / 3);
-    --list-height: 87vh;
-    --list-hf-height: calc((100vh - var(--list-height)) / 2);
-
-    --score-menu-height: 80vh;
-
-    --tiny-space: 0.5vh;
-    --small-space: 1vh;
-    --board-gap: 2vh;
-}
-@media (max-width: 768px) {
-    :root {
-        /* MOBILE FONT SIZES */
-        --small: 3vmin;
-        --semi-small: 3.5vmin;
-        --standard: 4vmin;
-        --semi-big: 4vmin; /* change? */
-        --big: 4vmin; /* change? */
-        --subtitle: 6.5vmin;
-        --title: 8vmin;
-
-        /* MOBILE SPACING */
-        --icon-button: 48px;
-
-        --list-width: 80vw;
-
-        --score-menu-height: 60vh;
-    }
-}
-
-/* GLOBALS */
-* {box-sizing: border-box;}
-
-/* USER SELECTION AND CURSOR */
-body {user-select: none;}
-#active-tasks, #inactive-tasks {user-select: contain;}
-
-@media (pointer: fine) {
-    header img, .cell, button,
-    #active-tasks, #inactive-tasks {
-        cursor: pointer;
-    }
-    .cell.marked, .cell.free {
-        cursor: default;
-    }
-}
-
-/* Z-INDEX */
-@media (hover: hover) {
-    .cell.free:hover {z-index: 5;}
-    .cell.marked:hover {z-index: 10;}
-    .cell:hover {z-index: 15;}
-}
-header {z-index: 20;}
-#score-menu {z-index: 25;}
-#full-list {z-index: 50;}
-.scrollable {z-index: 55;}
-#active-tasks, #inactive-tasks {z-index: 60;}
-.header-div, #new-task-button {z-index: 65;}
-#new-task {z-index: 75;}
-#board-cleared {z-index: 100;}
-
-/* SCROLLBAR */
 ::-webkit-scrollbar-track {
     background-color: var(--tl-white);
 }
+::-webkit-scrollbar-track-piece {
+    background: transparent;
+    border: none;
+}
 ::-webkit-scrollbar-button {
-    background-color: var(--free-space-pink);
+    display: none;
 }
 ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
     background-color: var(--square-pink);
     border: none;
 }
-::-webkit-scrollbar, ::-webkit-scrollbar-track-piece {
-    background: transparent;
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    gap: 10px; /* change? */
+
+    background-color: var(--bg-pink);
+
+    text-align: center;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* change to space-around? */
+    align-items: center;
+
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
+    color: var(--text-grey);
+    font-family: "Calibri"; /* maybe change, also change to var */
+    font-size: 12px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+    font-weight: bold;
+}
+
+button {
+    overflow: hidden;
+
+    padding: 2.5px 15px;
+
+    border-radius: 10px;
+    background-color: var(--button-pink);
     border: none;
+
+    text-align: center;
+    color: var(--white);
+    font-family: "Cherry Bomb One"; /* change to var */
+    font-size: 16px;
+    letter-spacing: 0.1em;
+}
+input {
+    padding: 2.5px 5px;
+
+    border-radius: 5px;
+    background-color: var(--input-bg-pink);
+    border: none;
+
+    text-align: center;
+    color: var(--text-black);
+    font-family: "KTEGAKI"; /* change to var */
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    font-weight: bold;
 }

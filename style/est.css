@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "KTEGAKI";
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url(../fonts/KTEGAKI.ttf) format("truetype");
+}
+/* font ktegaki is by spicy-sweet @ font.spicy-sweet.com */
+
+* {box-sizing: border-box;}
+
+body {user-select: none;}
+#active-tasks, #inactive-tasks {user-select: contain;}
+
+@media (pointer: fine) {
+    header img, .cell, button,
+    #active-tasks, #inactive-tasks {
+        cursor: pointer;
+    }
+    .cell.marked, .cell.free {
+        cursor: default;
+    }
+}
+
+@media (hover: hover) {
+    .cell.free:hover {z-index: 5;}
+    .cell.marked:hover {z-index: 10;}
+    .cell:hover {z-index: 15;}
+}
+header {z-index: 20;}
+#score-menu {z-index: 25;}
+#full-list {z-index: 50;}
+.scrollable {z-index: 55;}
+#active-tasks, #inactive-tasks {z-index: 60;}
+.header-div, #new-task-button {z-index: 65;}
+#new-task {z-index: 75;}
+#board-cleared {z-index: 100;}
+
+:root {
+    --white: #ffffff;
+    --tl-white: #ffffff80;
+    --off-white: #fffafa;
+    --lighter-grey: #f3f3f3;
+    --light-grey: #ececec;
+    --text-grey: #766666;
+    --text-black: #381a28;
+
+    --tl-pink: #ffe8eb5a;
+    --input-bg-pink: #ffe8eb;
+    --bg-pink: #ffdcdd;
+    --free-space-pink: #ffc7cd;
+    --square-pink: #ffb1b6;
+    --button-pink: #ff95a6;
+    --checked-pink: #ff7295;
+    --text-pink: #ff408b;
+
+    --purple: #c94685;
+    --blue: rgb(83, 49, 136);
+    --yellow: #ffff8c;
+}
+/* change: */
+/* remove color vars for colors only used once */
+/* and maybe for white too */

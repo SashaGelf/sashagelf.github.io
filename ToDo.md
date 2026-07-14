@@ -60,6 +60,7 @@
 ## Score History Menu
 - [ ] Make sure this whole section is working now!
 - [ ] Make sure the issue on scoreLogic.js line 43 (is that still the correct line?) is fixed. The code should be able to reduce now
+- [ ] Consider changing the table so the date displays are rows on the table (spanning multiple columns), instead of separate text between separate tables
 
 ## Task Logic
 - [ ] Fix taskLogic.js line 49 (?)

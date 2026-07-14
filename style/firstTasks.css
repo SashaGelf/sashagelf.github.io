@@ -1,0 +1,75 @@
+/* ctrl-f "change" */
+/* change all px? try at different viewport widths */
+
+main {
+    /* firstTasks.html only */
+
+    justify-content: space-around; /* change to center? */
+
+    padding: 20px;
+    gap: 15px;
+
+    border-radius: 25px;
+    background-color: var(--checked-pink);
+
+    color: var(--white);
+    font-family: "KTEGAKI"; /* change to var */
+}
+
+h1 {
+    /* firstTasks.html only */
+
+    font-family: "KTEGAKI"; /* change to var */
+    font-size: 20px;
+    letter-spacing: 0.05em;
+}
+
+#first-tasks-hint {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    padding: 15px;
+    gap: 10px;
+
+    border-radius: calc(50px / 3);
+    background-color: var(--free-space-pink); /* changed from --bg-pink; make sure that works */
+
+    color: var(--text-grey);
+    font-family: "Cause"; /* change to var */
+    font-size: 14px;
+}
+#hint-close {
+    /* width: 50%; */ /* try this out */
+}
+table {
+    border-spacing: 5px;
+}
+thead {
+    font-size: 18px;
+}
+#first-tasks-tables-both {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    gap: 20px;
+}
+/* consider nesting these instead: */
+#first-tasks-tables-both th:nth-child(odd) {
+    letter-spacing: 0.1em;
+}
+#first-tasks-tables-both th:nth-child(even) {
+    font-size: 16px;
+}
+#first-tasks-tables-both td:nth-child(odd) input {
+    width: 240px; /* aka 240px aka 30vw (if viewport width is 800px) */
+}
+
+/* style the rest of the text on the first tasks page */
+/* e.g. the "upload a task list .json file" thingy */
+
+/* then check at widths under 768px and 425px */
