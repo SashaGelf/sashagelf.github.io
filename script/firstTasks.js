@@ -1,7 +1,6 @@
 const savedTaskActive = JSON.parse(localStorage.getItem("taskActive"));
 if (savedTaskActive) {
-    if (savedTaskActive.length >= 24) {location.replace("/HTML/TaskBingoV3/index.html");}
-    // change that url later obvi make
+    if (savedTaskActive.length >= 24) {location.replace("/index.html");}
 }
 
 const firstTasks = [];
