@@ -1,14 +1,11 @@
-/* ctrl-f "change" */
-/* change all px? try at different viewport widths */
-
 ::-webkit-scrollbar {
-    width: 15px;
+    width: var(--scrollbar-width);
 
     background: transparent;
     border: none;
 }
 ::-webkit-scrollbar-track {
-    background-color: var(--tl-white);
+    background-color: #ffffff80;
 }
 ::-webkit-scrollbar-track-piece {
     background: transparent;
@@ -18,7 +15,7 @@
     display: none;
 }
 ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
+    border-radius: calc(var(--scrollbar-width) / 3);
     background-color: var(--square-pink);
     border: none;
 }
@@ -31,8 +28,8 @@ body {
 
     width: 100%;
     margin: 0;
-    padding: 10px;
-    gap: 10px; /* change? */
+    padding: var(--bod-mod);
+    gap: var(--bod-mod); /* change? */
 
     background-color: var(--bg-pink);
 
@@ -44,14 +41,14 @@ main {
     justify-content: center; /* change to space-around? */
     align-items: center;
 
-    margin: 10px;
+    margin: var(--bod-mod);
 }
 
 footer {
     text-align: center;
     color: var(--text-grey);
-    font-family: "Calibri"; /* maybe change, also change to var */
-    font-size: 12px;
+    font-family: var(--trebuchet);
+    font-size: var(--xxxs-pt);
 }
 
 h1 {
@@ -65,29 +62,29 @@ h1 {
 button {
     overflow: hidden;
 
-    padding: 2.5px 15px;
+    padding: var(--button-padding);
 
-    border-radius: 10px;
+    border-radius: var(--button-radius);
     background-color: var(--button-pink);
     border: none;
 
     text-align: center;
-    color: var(--white);
-    font-family: "Cherry Bomb One"; /* change to var */
-    font-size: 16px;
-    letter-spacing: 0.1em;
+    color: #ffffff;
+    font-family: var(--cherry);
+    font-size: var(--xs-pt);
+    letter-spacing: var(--ls-med);
 }
 input {
-    padding: 2.5px 5px;
+    padding: var(--input-padding);
 
-    border-radius: 5px;
+    border-radius: var(--input-radius);
     background-color: var(--input-bg-pink);
     border: none;
 
     text-align: center;
     color: var(--text-black);
-    font-family: "KTEGAKI"; /* change to var */
-    font-size: 16px;
-    letter-spacing: 0.05em;
+    font-family: var(--ktegaki);
+    font-size: var(--xs-pt);
+    letter-spacing: var(--ls-small);
     font-weight: bold;
 }

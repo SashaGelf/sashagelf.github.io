@@ -1,27 +1,24 @@
-/* ctrl-f "change" */
-/* change all px? try at different viewport widths */
-
 main {
     /* firstTasks.html only */
 
     justify-content: space-around; /* change to center? */
 
-    padding: 20px;
-    gap: 15px;
+    padding: calc(var(--bod-mod) * 2);
+    gap: calc(var(--bod-mod) * 1.5);
 
-    border-radius: 25px;
+    border-radius: var(--big-radius);
     background-color: var(--checked-pink);
 
-    color: var(--white);
-    font-family: "KTEGAKI"; /* change to var */
+    color: #ffffff;
+    font-family: var(--ktegaki); /* maybe change */
 }
 
 h1 {
     /* firstTasks.html only */
 
-    font-family: "KTEGAKI"; /* change to var */
-    font-size: 20px;
-    letter-spacing: 0.05em;
+    font-family: var(--ktegaki); /* maybe change */
+    font-size: var(--m-pt);
+    letter-spacing: var(--ls-small);
 }
 
 #first-tasks-hint {
@@ -31,24 +28,24 @@ h1 {
     align-items: center;
 
     width: 100%;
-    padding: 15px;
-    gap: 10px;
+    padding: calc(var(--bod-mod) * 1.5);
+    gap: var(--bod-mod);
 
-    border-radius: calc(50px / 3);
+    border-radius: var(--med-radius);
     background-color: var(--free-space-pink); /* changed from --bg-pink; make sure that works */
 
     color: var(--text-grey);
-    font-family: "Cause"; /* change to var */
-    font-size: 14px;
+    font-family: var(--cause); /* maybe change */
+    font-size: var(--xxs-pt);
 }
 #hint-close {
     /* width: 50%; */ /* try this out */
 }
 table {
-    border-spacing: 5px;
+    border-spacing: calc(var(--bod-mod) / 2);
 }
 thead {
-    font-size: 18px;
+    font-size: var(--s-pt);
 }
 #first-tasks-tables-both {
     display: flex;
@@ -56,20 +53,17 @@ thead {
     justify-content: space-around;
     align-items: center;
 
-    gap: 20px;
+    gap: calc(var(--bod-mod) * 2);
 }
-/* consider nesting these instead: */
 #first-tasks-tables-both th:nth-child(odd) {
-    letter-spacing: 0.1em;
+    letter-spacing: var(--ls-med);
 }
 #first-tasks-tables-both th:nth-child(even) {
-    font-size: 16px;
+    font-size: var(--xs-pt);
 }
 #first-tasks-tables-both td:nth-child(odd) input {
-    width: 240px; /* aka 240px aka 30vw (if viewport width is 800px) */
+    width: var(--first-task-input-width);
 }
 
 /* style the rest of the text on the first tasks page */
 /* e.g. the "upload a task list .json file" thingy */
-
-/* then check at widths under 768px and 425px */

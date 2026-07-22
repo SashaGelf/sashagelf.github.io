@@ -56,6 +56,7 @@
 - [x] Make sure importing task list option works
 - [ ] Create option to choose 24 tasks from a list of pre-made options (so you don't need to come up with 24 recurring tasks on the spot the first time you open the website)
 - [ ] Implement ability to create initial task list from a combination of both written tasks and selected pre-made tasks (just multiple sources in general)
+- [ ] Check any imported task list .json is accurately formatted at time of input/parsing
 
 ## Score History Menu
 - [ ] Make sure this whole section is working now!

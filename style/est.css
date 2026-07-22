@@ -13,13 +13,8 @@ body {user-select: none;}
 #active-tasks, #inactive-tasks {user-select: contain;}
 
 @media (pointer: fine) {
-    header img, .cell, button,
-    #active-tasks, #inactive-tasks {
-        cursor: pointer;
-    }
-    .cell.marked, .cell.free {
-        cursor: default;
-    }
+    header img, .cell, button, input, #active-tasks, #inactive-tasks {cursor: pointer;}
+    .cell.marked, .cell.free {cursor: default;}
 }
 
 @media (hover: hover) {
@@ -37,15 +32,9 @@ header {z-index: 20;}
 #board-cleared {z-index: 100;}
 
 :root {
-    --white: #ffffff;
-    --tl-white: #ffffff80;
-    --off-white: #fffafa;
-    --lighter-grey: #f3f3f3;
-    --light-grey: #ececec;
+    /* COLOR PALETTE */
     --text-grey: #766666;
     --text-black: #381a28;
-
-    --tl-pink: #ffe8eb5a;
     --input-bg-pink: #ffe8eb;
     --bg-pink: #ffdcdd;
     --free-space-pink: #ffc7cd;
@@ -53,11 +42,74 @@ header {z-index: 20;}
     --button-pink: #ff95a6;
     --checked-pink: #ff7295;
     --text-pink: #ff408b;
-
     --purple: #c94685;
-    --blue: rgb(83, 49, 136);
-    --yellow: #ffff8c;
+
+    /* FONT FAMILIES */
+    --cherry: "Cherry Bomb One", "Arial rounded MT Bold", "Arial Bold", Arial, "Segoe UI", Verdana, "Lucida Sans", sans-serif;
+    --ktegaki: "KTEGAKI", "Cause", "Trebuchet MS", Calibri, Tahoma, system-ui, "Segoe UI", Verdana, "Lucida Sans", sans-serif;
+    --cause: "Cause", "Trebuchet MS", Calibri, Tahoma, system-ui, "Segoe UI", Verdana, "Lucida Sans", sans-serif;
+    --trebuchet: "Trebuchet MS", Calibri, Tahoma, system-ui, "Segoe UI", Verdana, "Lucida Sans", sans-serif;
+
+    /* FONT SIZES */
+    /* probably replace the following with clamp or min/max */
+    --xxxs-pt: 12px;
+    --xxs-pt: 14px;
+    --xs-pt: 16px;
+    --s-pt: 18px;
+    --m-pt: 20px;
+    --l-pt: 24px;
+    --xl-pt: 32px;
+    --xxl-pt: 36px;
+    --cell-pt: 14px;
+
+    /* LETTER SPACING */
+    --ls-neg: -0.05em;
+    --ls-norm: 0;
+    --ls-small: 0.05em;
+    --ls-med: 0.1em;
+    --ls-big: 0.2em;
 }
-/* change: */
-/* remove color vars for colors only used once */
-/* and maybe for white too */
+
+:root {
+    /* maybe change these later ??? */
+    --scrollbar-width: 15px;
+
+    --button-padding: 2.5px 15px;
+    --button-radius: 10px;
+
+    --input-padding: 2.5px 5px;
+    --input-radius: 5px;
+
+    --first-task-input-width: 240px; /* aka 30vw if the viewport width is 800px */
+
+    --bod-mod: 10px;
+
+    --big-radius: 25px;
+    --med-radius: calc(50px / 3);
+
+    --header-img-button: 24px;
+
+    --board-gap: 10px; /* probably change, but fix the size first */
+    --cell-padding: 5px;
+
+    --button-gap: 15px;
+
+    --new-task-width: calc(100vw / 3); /* maybe change */
+}
+@media (min-width: 769px) {
+    /* I guess this is the default but I could also put stuff here specifically */
+}
+@media (max-width: 768px) {
+    :root {
+        --cell-pt: 13px; /* fix this with a clamp/min-max instead */
+        --xs-pt: 15px; /* ditto above */
+
+        --cell-padding: 2.5px; /* this can pprobably stay here */
+
+        --new-task-width: 50vw; /* also stays in this section */
+    }
+}
+
+/* to do: max width 425px */
+/* to do: ipad mini preset - the height throws stuff off */
+/* to do: phone presets */

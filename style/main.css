@@ -1,7 +1,3 @@
-/* ctrl-f "change" and "nest" */
-/* change all px? try at different viewport widths */
-/* move root to est.css or global.css? */
-
 :root {
     --list-hf-height: 8vh; /* change? clamp or min/max? */
 
@@ -9,35 +5,32 @@
 }
 
 body {
-    padding: 25px;
+    padding: calc(var(--bod-mod) * 2.5);
 }
 main {
-    gap: 10px;
+    gap: var(--bod-mod);
 }
 
 header {
     display: flex;
     align-items: center;
 
-    gap: 15px;
+    gap: var(--button-gap);
 
     text-align: center;
-
-    img {
-        width: 24px;
-        height: 24px;
-        aspect-ratio: 1/1;
-    }
-    /* if I want to nest the above, change styling on firstTasks.css for consistency */
-    /* or if I don't want to nest stuff on firstTasks.css, change THIS for consistency */
+}
+header img {
+    width: var(--header-img-button);
+    height: var(--header-img-button);
+    aspect-ratio: 1/1;
 }
 
 h1 {
     /* index.html only */
     color: var(--text-pink);
-    font-family: "Cherry Bomb One"; /* change to var */
-    font-size: 36px; /* change? */
-    letter-spacing: 0.2em;
+    font-family: var(--cherry);
+    font-size: var(--xxl-pt); /* change? */
+    letter-spacing: var(--ls-big);
 }
 
 .board {
@@ -51,29 +44,28 @@ h1 {
     /* so currently with this max height you can fit the whole board */
     /* in your browser window but not the whole page. currently. */
     aspect-ratio: 1/1;
-    gap: 10px; /* change, but fix the size first */
+    gap: var(--board-gap); /* change, but fix the size first */
 }
 .cell {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 0 0 calc(20% - (10px * 4 / 5)); /* change */
-    /* the 10px referenced above is the .board gap value */
+    flex: 0 0 calc(20% - (var(--board-gap) * 4 / 5)); /* change */
     word-wrap: break-word; /* do I need this */
     overflow: hidden;
 
     aspect-ratio: 1/1;
     margin: 0;
-    padding: 5px;
+    padding: var(--cell-padding); /* change? */
 
     border-radius: 15%; /* change? */
     background-color: var(--square-pink);
 
     text-align: center;
-    color: var(--white);
-    font-family: "KTEGAKI"; /* change to var */
-    font-size: 14px; /* change? maybe clamp or min/max */
-    letter-spacing: 0.05em;
+    color: #ffffff;
+    font-family: var(--ktegaki);
+    font-size: var(--cell-pt);
+    letter-spacing: var(--ls-small);
     line-height: 85%;
     font-weight: bold;
 }
@@ -112,24 +104,24 @@ h1 {
 }
 
 .scores {
-    margin: 10px;
+    margin: var(--bod-mod);
 
     color: var(--text-pink);
-    font-family: "KTEGAKI"; /* maybe change, also change to var */
-    font-size: 20px;
-    letter-spacing: 0.2em;
+    font-family: var(--ktegaki); /* maybe change */
+    font-size: var(--m-pt);
+    letter-spacing: var(--ls-big);
     font-weight: bold;
 }
 #square-score, #bingo-score, #board-score {
-    font-size: 32px;
+    font-size: var(--xl-pt);
 }
-/* consider nesting see above */
 .scores tr:nth-child(odd) {
     vertical-align: baseline;
 }
 .subtitle-row {
-    font-size: 16px;
-    letter-spacing: 0;
+    font-family: var(--cause);
+    font-size: var(--xs-pt);
+    letter-spacing: var(--ls-norm);
     font-weight: normal;
 }
 
@@ -137,7 +129,7 @@ h1 {
     display: flex;
     flex-direction: row;
 
-    gap: 15px;
+    gap: var(--button-gap);
 }
 #reset-button {
     background-color: var(--purple);
@@ -152,7 +144,7 @@ h1 {
     width: calc(100vw * 2 / 3); /* change */
     height: 100vh;
 
-    background-color: var(--white);
+    background-color: #ffffff;
     box-shadow: 1vw 0px 3vw 1vw #0000001b;
 
     transition: all 0.2s ease-out;
@@ -182,10 +174,10 @@ h2 {
     margin: 0;
     padding: 0;
 
-    color: var(--white);
-    font-family: "Cherry Bomb One"; /* change to var */
-    font-size: 20px;
-    letter-spacing: 0.1em;
+    color: #ffffff;
+    font-family: var(--cherry);
+    font-size: var(--m-pt);
+    letter-spacing: var(--ls-med);
     font-weight: normal;
 }
 .scrollable {
@@ -198,33 +190,31 @@ h2 {
 
     overflow-y: auto;
 
-    font-family: "KTEGAKI"; /* maybe change, and change to var */
+    font-family: var(--cause);
 }
 #active-tasks {
     width: 100%;
 
-    background-color: var(--off-white);
+    background-color: #fffafa;
 
     color: var(--text-black);
-    font-size: 16px;
+    font-size: var(--xs-pt);
 }
-/* nesting blah blah see above */
 #active-tasks tr:nth-child(even) {
     background-color: var(--input-bg-pink);
 }
 #inactive-tasks {
     width: 100%;
 
-    background-color: var(--lighter-grey);
+    background-color: #f3f3f3;
     border-top: solid 2px var(--checked-pink);
 
     color: var(--text-grey);
     font-style: italic;
-    font-size: 14px;
+    font-size: var(--xxs-pt);
 }
-/* nesting ditto */
 #inactive-tasks tr:nth-child(even) {
-    background-color: var(--light-grey);
+    background-color: #ececec;
 }
 #active-tasks, #inactive-tasks {
     tr td:nth-child(even) {
@@ -245,8 +235,8 @@ h2 {
     background-color: var(--button-pink);
     box-shadow: 0px -0.5vh 3vw 0px #0000003a;
 
-    font-size: 20px;
-    letter-spacing: 0.1em;
+    font-size: var(--m-pt);
+    letter-spacing: var(--ls-med);
 }
 
 /* new task pop up stuff */
@@ -261,19 +251,19 @@ h2 {
     flex-wrap: wrap; /* do I need this */
     word-wrap: normal; /* do I need this */
 
-    width: calc(100vw / 3); /* change? */
+    width: var(--new-task-width);
     aspect-ratio: 2/3;
-    padding: 15px;
+    padding: calc(var(--bod-mod) * 1.5);
 
-    border-radius: 25px;
+    border-radius: var(--big-radius);
     background-color: var(--checked-pink);
     box-shadow: 0px 1px 4vmin 1vmin #0000003a;
 
     text-align: center;
-    color: var(--white);
-    font-family: "KTEGAKI"; /* maybe change, also change to var */
-    font-size: 16px;
-    letter-spacing: 0.05em;
+    color: #ffffff;
+    font-family: var(--ktegaki); /* maybe change */
+    font-size: var(--xs-pt);
+    letter-spacing: var(--ls-small);
     font-weight: bold;
 }
 #new-task.visible {
@@ -284,14 +274,14 @@ h3 {
     padding: 0;
 
     color: var(--bg-pink);
-    font-family: "Cherry Bomb One"; /* change to var */
-    font-size: 24px;
-    letter-spacing: 0.1em;
+    font-family: var(--cherry);
+    font-size: var(--l-pt);
+    letter-spacing: var(--ls-med);
     font-weight: normal;
 }
 .hint {
-    font-size: 14px;
-    letter-spacing: 0;
+    font-size: var(--xxs-pt);
+    letter-spacing: var(--ls-norm);
     font-weight: normal;
 }
 #ntConfirm {
@@ -312,17 +302,17 @@ h3 {
     justify-content: space-evenly;
     align-items: center;
 
-    width: 100vw;
+    width: 100vw; /* change fix */
     height: 80vh; /* change? */
 
     background:-webkit-linear-gradient(rgb(83, 49, 136), #c94685);
     box-shadow: 0px 1vh 3vw 1vw #0000001b;
 
-    color: var(--yellow);
+    color: #ffff8c;
     text-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
-    font-family: "KTEGAKI"; /* maybe change, also change to var */
-    font-size: 16px;
-    letter-spacing: 0.05em;
+    font-family: var(--ktegaki); /* maybe change */
+    font-size: var(--xs-pt);
+    letter-spacing: var(--ls-small);
     font-weight: bold;
 
     transition: all 0.2s ease-out;
@@ -342,24 +332,26 @@ h3 {
     border-spacing: 20px 0;
 }
 #high-date, #last-date, #today-date {
-    margin-bottom: 5px; /* change? */
+    margin-bottom: calc(var(--bod-mod) / 2); /* change? */
 
-    font-size: 14px;
+    font-family: var(--cause);
+    font-size: var(--xs-pt);
     font-weight: normal;
 }
 #table-label {
-    font-size: 12px;
-    letter-spacing: -0.05em;
+    font-family: var(--cause);
+    font-size: var(--xxxs-pt);
+    letter-spacing: var(--ls-neg);
     font-weight: normal;
 }
 svg {
     height: 50%; /* change? */
 
-    background-color: var(--tl-pink);
+    background-color: #ffe8eb5a;
 }
 path {
     fill: none;
-    stroke: var(--yellow);
+    stroke: #ffff8c;
     stroke-linecap: round;
     stroke-width: 5px; /* change? clamp or min/max? */
 }
@@ -372,9 +364,8 @@ path#axis {
 }
 svg text {
     fill: var(--input-bg-pink);
-    font-size: 20px;
+    font-size: var(--m-pt);
 }
-/* nesting blah */
 
 /* board cleared pop up button */
 #board-cleared {
@@ -393,6 +384,6 @@ svg text {
     box-shadow: 0 0 10vmin 5vmin #0000003a, 0 0 5vmin 2vmin #0000003a;
 
     text-align: center;
-    font-size: 20px; /* maybe change */
+    font-size: var(--m-pt);
     font-weight: normal;
 }

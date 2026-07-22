@@ -1,9 +1,3 @@
-:root {
-    --bubble: "Cherry Bomb One", "Arial Rounded MT Bold", "Arial Rounded MT", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --cute: "KTEGAKI", "Cause", "Calibri", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --classic: "Calibri", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .board {
     height: calc(97vmin * 2/3);
 }
