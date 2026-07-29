@@ -1,0 +1,23 @@
+.board {
+    height: calc(97vmin * 2/3);
+}
+@media (max-width: 768px) {
+    .board {
+        margin: 5vmin;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --icon-button: 48px;
+        --list-width: 80vw;
+        --new-task-width: 66.7vw;
+        --score-menu-height: 60vh;
+    }
+}
+@media (max-width: 768px) {
+    svg {
+        width: 90%;
+        /* INSTEAD OF height */
+    }
+}

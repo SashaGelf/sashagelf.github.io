@@ -12,23 +12,30 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cause:wght@100..900&display=swap">
 
+        <link rel="stylesheet" href="style/est.css">
         <link rel="stylesheet" href="style/global.css">
-        <link rel="stylesheet" href="style/display.css">
-        <link rel="stylesheet" href="style/spacing.css">
-        <link rel="stylesheet" href="style/styling.css">
+        <link rel="stylesheet" href="style/firstTasks.css">
     </head>
     <body>
         <main class="first-tasks-main">
-            You have no Local Save Data.<br>
-            Create some tasks!<br>
+            <div>
+                <h1>You have no Local Save Data</h1>
+                <h1>(a.k.a. it's your first time here)</h1>
+                <h1>Create some tasks!</h1>
+                <!-- might change this text content later -->
+            </div>
             <div id="first-tasks-hint">
-                Be specific with the name of the task, but don't make it too long, or it won't fit in the bingo board space!
-                <br>
-                The frequency is a number that represents how often your task needs to be done.
-                "1" means a task needs to be done daily, "2" every other day, and so on.
-                "7" means a task needs to be done weekly, and "31" means a task needs to be done monthly.
-                You can enter whatever frequency you want, up to 365, though it must be a whole number (no fractions or decimals).
-                <br>
+                <div>
+                    Be specific with the name of the task, but don't make it too long, or it won't fit in the bingo board space!
+                </div>
+                <div>
+                    The frequency is a number that represents how often your task needs to be done.
+                    <br>
+                    "1" means a task needs to be done daily, "2" every other day, and so on.
+                    "7" means a task needs to be done weekly, and "31" means a task needs to be done monthly.
+                    <br>
+                    You can enter whatever frequency you want, up to 365, though it must be a whole number (no fractions or decimals).
+                </div>
                 <button id="hint-close">dismiss this hint</button>
             </div>
             <div id="first-tasks-tables-both">
@@ -143,13 +150,12 @@
                 </table>
             </div>
 
-            Upload a task list .JSON file
+            <h1>Upload a task list .JSON file</h1>
             <input type="file" id="ft-upload-tasks" name="ft-upload-tasks" accept=".json" multiple>
             
             <button id="first-tasks-submit">submit</button>
         </main>
 
-        <!-- copyright footer -->
         <footer>&copy; 2026 Paige Carlson. All rights reserved.</footer>
 
         <script type="module" src="script/firstTasks.js"></script>

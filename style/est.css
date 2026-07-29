@@ -1,0 +1,133 @@
+@font-face {
+    font-family: "KTEGAKI";
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url(../fonts/KTEGAKI.ttf) format("truetype");
+}
+/* font ktegaki is by spicy-sweet @ font.spicy-sweet.com */
+
+* {box-sizing: border-box;}
+
+body {user-select: none;}
+#active-tasks, #inactive-tasks {user-select: contain;}
+
+@media (pointer: fine) {
+    header img, .cell, button, input, #active-tasks, #inactive-tasks {cursor: pointer;}
+    .cell.marked, .cell.free {cursor: default;}
+}
+
+@media (hover: hover) {
+    .cell.free:hover {z-index: 5;}
+    .cell.marked:hover {z-index: 10;}
+    .cell:hover {z-index: 15;}
+}
+header {z-index: 20;}
+#score-menu {z-index: 25;}
+#full-list {z-index: 50;}
+.scrollable {z-index: 55;}
+#active-tasks, #inactive-tasks {z-index: 60;}
+.header-div, #new-task-button {z-index: 65;}
+#new-task {z-index: 75;}
+#board-cleared {z-index: 100;}
+
+:root {
+    /* COLOR PALETTE */
+    --text-grey: #766666;
+    --text-black: #381a28;
+    --input-bg-pink: #ffe8eb;
+    --bg-pink: #ffdcdd;
+    --free-space-pink: #ffc7cd;
+    --square-pink: #ffb1b6;
+    --button-pink: #ff95a6;
+    --checked-pink: #ff7295;
+    --text-pink: #ff408b;
+    --purple: #c94685;
+
+    /* FONT FAMILIES */
+    --cherry: "Cherry Bomb One", "Arial rounded MT Bold", "Arial Bold", Arial, "Segoe UI", Verdana, "Lucida Sans", sans-serif;
+    --ktegaki: "KTEGAKI", "Cause", "Trebuchet MS", Calibri, Tahoma, system-ui, "Segoe UI", Verdana, "Lucida Sans", sans-serif;
+    --cause: "Cause", "Trebuchet MS", Calibri, Tahoma, system-ui, "Segoe UI", Verdana, "Lucida Sans", sans-serif;
+    --trebuchet: "Trebuchet MS", Calibri, Tahoma, system-ui, "Segoe UI", Verdana, "Lucida Sans", sans-serif;
+}
+
+/* trying pointer instead of min-width: 769px/max-width: 768px */
+@media (pointer: fine) {
+    :root {
+        /* FONT SIZES */
+        --cell-pt: 14px;
+        --xxxs-pt: 12px;
+        --xxs-pt: 14px;
+        --xs-pt: 16px;
+        --s-pt: 18px;
+        --m-pt: 22px;
+        --l-pt: 24px;
+        --xl-pt: 32px;
+        --xxl-pt: 36px;
+    }
+}
+@media (pointer: none) {
+    :root {
+        /* FONT SIZES */
+        --cell-pt: clamp(10px, 4vw - 8px, 26px);
+        --xxxs-pt: clamp(10px, 8vw - 20px, 20px);
+        --xxs-pt: clamp(12px, 8vw - 18px, 22px);
+        --xs-pt: clamp(14px, 8vw - 16px, 26px);
+        --s-pt: clamp(22px, 4vw + 7px, 28px);
+        --m-pt: clamp(24px, 4vw + 9px, 30px);
+        --l-pt: clamp(26px, 8vw - 4px, 32px);
+        --xl-pt: clamp(28px, 16vw - 32px, 48px);
+        --xxl-pt: clamp(32px, 16vw - 28px, 52px);
+    }
+}
+
+:root {
+    /* LETTER SPACING */
+    --ls-neg: -0.05em;
+    --ls-norm: 0;
+    --ls-small: 0.05em;
+    --ls-med: 0.1em;
+    --ls-big: 0.2em;
+}
+:root {
+    /* maybe change these later ??? */
+    --scrollbar-width: 15px;
+
+    --button-padding: 2.5px 15px;
+    --button-radius: 10px;
+
+    --input-padding: 2.5px 5px;
+    --input-radius: 5px;
+
+    --first-task-input-width: 240px; /* aka 30vw if the viewport width is 800px */
+
+    --bod-mod: 10px;
+
+    --big-radius: 25px;
+    --med-radius: calc(50px / 3);
+
+    --header-img-button: 24px;
+
+    --board-gap: 10px; /* probably change, but fix the size first */
+    --cell-padding: 5px;
+
+    --button-gap: 15px;
+
+    --new-task-width: calc(100vw / 3); /* maybe change */
+}
+@media (max-width: 768px) {
+    :root {
+        --ls-small: 0.03em;
+        --ls-med: 0.05em;
+
+        --first-task-input-width: 160px; /* ditto above */
+
+        --bod-mod: 6px; /* ditto above */
+
+        --header-img-button: 48px; /* this is fine */
+
+        --cell-padding: 2.5px; /* this can pprobably stay here */
+
+        --new-task-width: 50vw; /* also stays in this section */
+    }
+}

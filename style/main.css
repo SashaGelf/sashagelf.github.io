@@ -1,171 +1,402 @@
-button {
-    border-radius: 1.9cqh;
-}
-@media (max-width: 768px) {
-    button {
-        border-radius: 1.4cqh;
-    }
-}
-::-webkit-scrollbar-button {
-    border-radius: 0.06cqi;
-}
-::-webkit-scrollbar-thumb {
-    border-radius: 0.6cqw;
-}
-@media (max-width: 768px) {
-    ::-webkit-scrollbar-button {
-        border-radius: 1cqi;
-    }
-    ::-webkit-scrollbar-thumb {
-        border-radius: 1cqw;
-    }
-}
-input {
-    border-radius: 0.8cqh;
-}
-.first-tasks-main {
-    border-radius: 5cqh;
-    /* modify for mobile */
-}
-#first-tasks-hint {
-    border-radius: 2cqh; /* change maybe? */
-    /* modify for mobile */
-}
-#new-task {
-    border-radius: 4cqw;
-}
-@media (max-width: 768px) {
-    #new-task {
-        border-radius: 8cqw;
-    }
+:root {
+    --list-hf-height: 8vh; /* change? clamp or min/max? */
+
+    --list-height: calc(100vh - (var(--list-hf-height) * 2));
 }
 
-h1, .scores {
-    letter-spacing: 0.22em;
+body {
+    padding: calc(var(--bod-mod) * 2.5);
 }
-h2, #new-task-button, h3 {
-    letter-spacing: 0.1em;
-}
-.cell, button {
-    letter-spacing: 0.08em;
-}
-#active-tasks, #inactive-tasks, #score-menu {
-    letter-spacing: 0.04em;
-}
-.subtitle-row {
-    letter-spacing: 0;
-}
-#table-label {
-    letter-spacing: -0.05em;
-}
-#first-tasks-tables-both th:nth-child(odd) {
-    letter-spacing: 0.1em;
-}
-#first-tasks-tables-both input {
-    /* modify for mobile */
-    letter-spacing: 0.05em;
+main {
+    margin: 0;
 }
 
-.cell {
-    line-height: 85%;
+header {
+    display: flex;
+    align-items: center;
+
+    gap: var(--button-gap);
+
+    text-align: center;
 }
-#first-tasks-hint {
-    line-height: 110%;
-    /* modify for mobile */
+header img {
+    width: var(--header-img-button);
+    height: var(--header-img-button);
+    aspect-ratio: 1/1;
 }
 
-#high-score, #last-score {
-    border-spacing: 2.5vw 0;
-}
-@media (max-width: 768px) {
-    #high-score, #last-score {
-        border-spacing: 3.5vw 0;
-    }
+section.central {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    gap: var(--bod-mod);
 }
 
-#first-tasks-tables-both td:nth-child(odd) input {
-    width: 30cqi; /* maybe change? */
-    /* modify for mobile */
-}
-::-webkit-scrollbar {
-    width: 1.8vw;
-}
-::-webkit-scrollbar-button {
-    height: 1.8vw;
-}
-@media (max-width: 768px) {
-    ::-webkit-scrollbar {
-        width: 3.2vw;
-    }
-    ::-webkit-scrollbar-button {
-        height: 3.2vw;
-    }
-}
-#new-task {
-    width: 33.3vw;
-}
-@media (max-width: 768px) {
-    #new-task {
-        width: 66.7vw;
-    }
+h1 {
+    /* index.html only */
+    color: var(--text-pink);
+    font-family: var(--cherry);
+    font-size: var(--xxl-pt); /* change? */
+    letter-spacing: var(--ls-big);
 }
 
 .board {
-    height: calc(97vmin * 2/3);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 40vw;
+    flex-wrap: wrap;
+
+    max-width: 60vw;
+    min-width: none;
+    max-height: 80vh;
+    min-height: none;
+    aspect-ratio: 1/1;
+    gap: var(--board-gap); /* change, but fix the size first */
 }
-@media (max-width: 768px) {
-    .board {
-        margin: 5vmin;
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 calc(20% - (var(--board-gap) * 4/5));
+    word-wrap: break-word; /* do I need this */
+    overflow: hidden;
+
+    min-width: none;
+    min-height: none;
+    aspect-ratio: 1/1;
+    margin: 0;
+    padding: var(--cell-padding); /* change? */
+
+    border-radius: 15%; /* change? */
+    background-color: var(--square-pink);
+
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--ktegaki);
+    font-size: var(--cell-pt);
+    letter-spacing: var(--ls-small);
+    line-height: 85%;
+    font-weight: bold;
+}
+.cell.free {
+    background-color: var(--free-space-pink);
+    background-image: url("../assets/freeSpace.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.cell.marked {
+    background-color: var(--checked-pink);
+}
+@media (hover: hover) {
+    .cell {
+        transform: scale(1);
+        transform-origin: center center;
+        transition: all 0.5s ease;
+    }
+    .cell:hover {
+        background-color: var(--button-pink);
+        /* add shadow */
+
+        transform: scale(1.5);
+    }
+    .cell.free:hover {
+        /* add teensy shadow */
+
+        transform: scale(1.05);
+    }
+    .cell.marked:hover {
+        /* add small shadow */
+
+        transform: scale(1.2);
     }
 }
 
-.first-tasks-main {
-    margin: 2% 4%; /* change later */
-    padding: 3%; /* change later */
-    /* modify for mobile */
+.scores {
+    color: var(--text-pink);
+    font-family: var(--ktegaki); /* maybe change */
+    font-size: var(--m-pt);
+    letter-spacing: var(--ls-big);
+    font-weight: bold;
 }
-#hint-close {
-    margin: 1.5vmin 0 0.5vmin 0; /* change later */
-    /* modify for mobile */
+#square-score, #bingo-score, #board-score {
+    font-size: var(--xl-pt);
 }
-#first-tasks-hint {
-    padding: 1.5vmin; /* change */
-    /* modify for mobile */
+.scores tr:nth-child(odd) {
+    vertical-align: baseline;
 }
-button {
-    padding: 0.5vmin 2.5vmin;
-}
-@media (max-width: 768px) {
-    .game-buttons {
-        gap: 4vw;
-    }
-
-    button {
-        padding: 1vmin 3.5vmin;
-    }
-}
-header {
-    gap: 3vw;
-}
-@media (max-width: 768px) {
-    body {
-        padding: 5vh 0;
-    }
-    header {
-        gap: 6vw;
-    }
-}
-#first-tasks-tables-both {
-    gap: 2vw; /* change later */
-    /* modify for mobile */
+.subtitle-row {
+    font-family: var(--cause);
+    font-size: var(--xs-pt);
+    letter-spacing: var(--ls-norm);
+    font-weight: normal;
 }
 
-/* STUFF I'M STILL WORKING ON */
-#options, #about {
+.game-buttons {
+    display: flex;
+    flex-direction: row;
+
+    gap: var(--button-gap);
+}
+#reset-button {
+    background-color: var(--purple);
+}
+
+/* full task list stuff */
+#full-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: calc(100vw * 2 / 3); /* change */
+    height: 100vh;
+
+    background-color: #ffffff;
+    box-shadow: 1vw 0px 3vw 1vw #0000001b;
+
+    transition: all 0.2s ease-out;
+    transform: translateX(-100vw);
+}
+#full-list.visible {
+    transition: all 0.2s ease-in;
+    transform: translateX(0vw);
+}
+.header-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: var(--list-hf-height);
+
+    background-color: var(--button-pink);
+    box-shadow: 0px 0.5vh 3vw 0px #0000003a;
+    border: none;
+}
+h2 {
+    margin: 0;
+    padding: 0;
+
+    color: #ffffff;
+    font-family: var(--cherry);
+    font-size: var(--m-pt);
+    letter-spacing: var(--ls-med);
+    font-weight: normal;
+}
+.scrollable {
+    position: absolute;
+    top: var(--list-hf-height);
+    left: 0;
+
+    width: 100%;
+    height: var(--list-height);
+
+    overflow-y: auto;
+
+    font-family: var(--cause);
+}
+#active-tasks {
+    width: 100%;
+
+    background-color: #fffafa;
+
+    color: var(--text-black);
+    font-size: var(--xs-pt);
+}
+#active-tasks tr:nth-child(even) {
+    background-color: var(--input-bg-pink);
+}
+#inactive-tasks {
+    width: 100%;
+
+    background-color: #f3f3f3;
+    border-top: solid 2px var(--checked-pink);
+
+    color: var(--text-grey);
+    font-style: italic;
+    font-size: var(--xxs-pt);
+}
+#inactive-tasks tr:nth-child(even) {
+    background-color: #ececec;
+}
+#active-tasks, #inactive-tasks {
+    tr td:nth-child(even) {
+        font-size: 90%;
+    }
+}
+#new-task-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    align-items: center;
+
+    width: 100%;
+    height: var(--list-hf-height);
+
+    border-radius: 0;
+    background-color: var(--button-pink);
+    box-shadow: 0px -0.5vh 3vw 0px #0000003a;
+
+    font-size: var(--m-pt);
+    letter-spacing: var(--ls-med);
+}
+
+/* new task pop up stuff */
+#new-task {
     display: none;
 
-    .visible {
-        display: flex;
-    }
+    position: absolute;
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* do I need this */
+    word-wrap: normal; /* do I need this */
+
+    width: var(--new-task-width);
+    aspect-ratio: 2/3;
+    padding: calc(var(--bod-mod) * 1.5);
+
+    border-radius: var(--big-radius);
+    background-color: var(--checked-pink);
+    box-shadow: 0px 1px 4vmin 1vmin #0000003a;
+
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--ktegaki); /* maybe change */
+    font-size: var(--xs-pt);
+    letter-spacing: var(--ls-small);
+    font-weight: bold;
 }
-/* replace this with a transform??? */
+#new-task.visible {
+    display: flex;
+}
+h3 {
+    margin: 0;
+    padding: 0;
+
+    color: var(--bg-pink);
+    font-family: var(--cherry);
+    font-size: var(--l-pt);
+    letter-spacing: var(--ls-med);
+    font-weight: normal;
+}
+.hint {
+    font-size: var(--xxs-pt);
+    letter-spacing: var(--ls-norm);
+    font-weight: normal;
+}
+#ntConfirm {
+    background-color: var(--square-pink);
+}
+#ntCancel {
+    background-color: var(--purple);
+}
+
+/* dropdown score menu stuff */
+#score-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100vw; /* change fix */
+    height: 80vh; /* change? */
+
+    background:-webkit-linear-gradient(rgb(83, 49, 136), #c94685);
+    box-shadow: 0px 1vh 3vw 1vw #0000001b;
+
+    color: #ffff8c;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+    font-family: var(--ktegaki); /* maybe change */
+    font-size: var(--xs-pt);
+    letter-spacing: var(--ls-small);
+    font-weight: bold;
+
+    transition: all 0.2s ease-out;
+    transform: translateY(-100vh);
+}
+#score-menu.visible {
+    transition: all 0.2s ease-in;
+    transform: translateY(0vh);
+}
+.table-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#high-score, #last-score {
+    border-spacing: 20px 0;
+}
+#high-date, #last-date, #today-date {
+    margin-bottom: calc(var(--bod-mod) / 2); /* change? */
+
+    font-family: var(--cause);
+    font-size: var(--xs-pt);
+    font-weight: normal;
+}
+#table-label {
+    font-family: var(--cause);
+    font-size: var(--xxxs-pt);
+    letter-spacing: var(--ls-neg);
+    font-weight: normal;
+}
+svg {
+    height: 50%; /* change? */
+
+    background-color: #ffe8eb5a;
+}
+path {
+    fill: none;
+    stroke: #ffff8c;
+    stroke-linecap: round;
+    stroke-width: 5px; /* change? clamp or min/max? */
+}
+path#guide {
+    stroke: var(--button-pink);
+    stroke-dasharray: 8,12;
+}
+path#axis {
+    stroke: var(--checked-pink);
+}
+svg text {
+    fill: var(--input-bg-pink);
+    font-size: var(--m-pt);
+}
+
+/* board cleared pop up button */
+#board-cleared {
+    display: none;
+
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 50vmin;
+    height: 50vmin;
+    aspect-ratio: 1/1;
+
+    border-radius: 49%;
+    box-shadow: 0 0 10vmin 5vmin #0000003a, 0 0 5vmin 2vmin #0000003a;
+
+    text-align: center;
+    font-size: var(--m-pt);
+    font-weight: normal;
+}
