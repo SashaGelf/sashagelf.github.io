@@ -29,8 +29,6 @@
 
         </header>
         <main>
-            <h1>Task Bingo</h1>
-
             <section id="full-list">
                 <div class="header-div">
                     <h2>All Tasks</h2>
@@ -129,33 +127,36 @@
             <section class="central">
                 <h1>Task Bingo</h1>
 
-            <div id="bingo-board" class="board"></div>
+                <div id="bingo-board" class="board"></div>
 
-            <table class="scores">
-                <tr>
-                    <td>Score:</td>
-                    <td id="square-score"></td>
-                    <td id="bingo-score"></td>
-                    <td id="board-score"></td>
-                </tr>
-                <tr class="subtitle-row">
-                    <td><!-- empty cell --></td>
-                    <td>square</td>
-                    <td>bingo</td>
-                    <td>board</td>
-                </tr>
-            </table>
+                <table class="scores">
+                    <tr>
+                        <td>Score:</td>
+                        <td id="square-score"></td>
+                        <td id="bingo-score"></td>
+                        <td id="board-score"></td>
+                    </tr>
+                    <tr class="subtitle-row">
+                        <td><!-- empty cell --></td>
+                        <td>square</td>
+                        <td>bingo</td>
+                        <td>board</td>
+                    </tr>
+                </table>
 
-            <div class="game-buttons">
-                <button id="save-button">save manually</button>
-                <button id="reset-button">re-shuffle board</button>
-            </div>
+                <div class="game-buttons">
+                    <button id="save-button">save manually</button>
+                    <button id="reset-button">re-shuffle board</button>
+                </div>
+            </section>
 
             <button id="board-cleared" onclick="clearedBoardClicked()">
                 congratulations!<br>click to start a new game
             </button>
         </main>
+
         <footer>&copy; 2026 Paige Carlson. All rights reserved.</footer>
+
         <script type="module" src="script/script.js"></script>
     </body>
 </html>

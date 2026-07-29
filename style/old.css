@@ -21,13 +21,3 @@
         /* INSTEAD OF height */
     }
 }
-
-/* STUFF I'M STILL WORKING ON */
-#options, #about {
-    display: none;
-
-    .visible {
-        display: flex;
-    }
-}
-/* replace this with a transform??? */

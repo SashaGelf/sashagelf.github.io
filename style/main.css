@@ -8,7 +8,7 @@ body {
     padding: calc(var(--bod-mod) * 2.5);
 }
 main {
-    gap: var(--bod-mod);
+    margin: 0;
 }
 
 header {
@@ -25,6 +25,17 @@ header img {
     aspect-ratio: 1/1;
 }
 
+section.central {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    gap: var(--bod-mod);
+}
+
 h1 {
     /* index.html only */
     color: var(--text-pink);
@@ -38,11 +49,13 @@ h1 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex: 1 1 40vw;
     flex-wrap: wrap;
 
-    max-height: 100vh; /* change */
-    /* so currently with this max height you can fit the whole board */
-    /* in your browser window but not the whole page. currently. */
+    max-width: 60vw;
+    min-width: none;
+    max-height: 80vh;
+    min-height: none;
     aspect-ratio: 1/1;
     gap: var(--board-gap); /* change, but fix the size first */
 }
@@ -50,10 +63,12 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 0 0 calc(20% - (var(--board-gap) * 4 / 5)); /* change */
+    flex: 1 1 calc(20% - (var(--board-gap) * 4/5));
     word-wrap: break-word; /* do I need this */
     overflow: hidden;
 
+    min-width: none;
+    min-height: none;
     aspect-ratio: 1/1;
     margin: 0;
     padding: var(--cell-padding); /* change? */
@@ -104,8 +119,6 @@ h1 {
 }
 
 .scores {
-    margin: var(--bod-mod);
-
     color: var(--text-pink);
     font-family: var(--ktegaki); /* maybe change */
     font-size: var(--m-pt);

@@ -31,6 +31,8 @@ body {
     padding: var(--bod-mod);
     gap: var(--bod-mod); /* change? */
 
+    overflow-x: hidden;
+
     background-color: var(--bg-pink);
 
     text-align: center;
@@ -38,7 +40,7 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* change to space-around? */
+    justify-content: center;
     align-items: center;
 
     margin: var(--bod-mod);

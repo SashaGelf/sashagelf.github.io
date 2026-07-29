@@ -38,7 +38,7 @@ h1 {
     font-family: var(--cause); /* maybe change */
     font-size: var(--xxs-pt);
 }
-#hint-close {
+/* #hint-close { */
     /* width: 50%; */ /* try this out */
 /* } */
 table {
