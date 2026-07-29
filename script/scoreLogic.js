@@ -145,7 +145,8 @@ function setDayLabels(array) {
     }
 }
 function labelDays(obj) {
-    let thisDate = obj.date;
+    let thisDate = new Date(obj.date);
+    thisDate.setHours(0, 0, 0, 0);
     let wd = thisDate.getDay();
     if (wd === 0 || wd === 6) {return "S";}
     if (wd === 1) {return "M";}
