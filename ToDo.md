@@ -29,6 +29,7 @@
 - [ ] Fix up styling, specifically for mobile
 - [ ] Specifically, fix mobile styling for "first tasks" section
 - [ ] Improve the layout for a browser window under 768px wide but wider than the average mobile screen (think tablet size, or a window taking up only half a computer screen, for example)
+- [x] Make spacing and sizing more cohesive
 
 ## Color and Font
 - [ ] Finish styling text and input on "first tasks" section

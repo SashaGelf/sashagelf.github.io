@@ -40,7 +40,7 @@ h1 {
 }
 #hint-close {
     /* width: 50%; */ /* try this out */
-}
+/* } */
 table {
     border-spacing: calc(var(--bod-mod) / 2);
 }
